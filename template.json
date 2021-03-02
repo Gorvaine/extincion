@@ -5,23 +5,20 @@
       "base": {
         "health": {
           "value": 8,
-          "min": 0,
-          "max": 20
+          "min": 0
         },
         "adrenaline": {
           "value": 8,
           "min": 0,
-          "max": 20
+          "max": 10
         },
         "damage": {
           "value": 8,
-          "min": 0,
-          "max": 20
+          "min": 0
         },
         "unarmed": {
           "value": 8,
-          "min": 0,
-          "max": 20
+          "min": 0
         }
       }
     },
@@ -33,7 +30,7 @@
           "value": 1
         },
         "experience": {
-          "value": 1
+          "value": 0
         },
         "class": {
           "value": 1
