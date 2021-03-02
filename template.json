@@ -4,14 +4,24 @@
     "templates": {
       "base": {
         "health": {
-          "value": 10,
+          "value": 8,
           "min": 0,
-          "max": 10
+          "max": 20
         },
-        "power": {
-          "value": 5,
+        "adrenaline": {
+          "value": 8,
           "min": 0,
-          "max": 5
+          "max": 20
+        },
+        "damage": {
+          "value": 8,
+          "min": 0,
+          "max": 20
+        },
+        "unarmed": {
+          "value": 8,
+          "min": 0,
+          "max": 20
         }
       }
     },
@@ -20,6 +30,15 @@
       "biography": "",
       "attributes": {
         "level": {
+          "value": 1
+        },
+        "experience": {
+          "value": 1
+        },
+        "class": {
+          "value": 1
+        },
+        "background": {
           "value": 1
         }
       },
@@ -36,7 +55,7 @@
         "int": {
           "value": 10
         },
-        "wis": {
+        "ner": {
           "value": 10
         },
         "cha": {
