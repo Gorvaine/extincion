@@ -1,3 +1,5 @@
+import { EXTINCION } from '../config.js'
+
 /**
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
@@ -24,6 +26,10 @@ export class extincionActorSheet extends ActorSheet {
     for (let attr of Object.values(data.data.attributes)) {
       attr.isCheckbox = attr.dtype === "Boolean";
     }
+    for (let [key, abil] of Object.entries(data.data.abilities)){
+      abil.label = game.i18n.localize(EXTINCION.abilities[key])
+    }
+    console.log(data.data.abilities)
     return data;
   }
 
