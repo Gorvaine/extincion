@@ -1,0 +1,9 @@
+{
+    "EXTINCION.ActorName": "Nombre del Actor",
+    "EXTINCION.AbilityCha": "Carisma",
+    "EXTINCION.AbilityCon": "Constitución",
+    "EXTINCION.AbilityDex": "Destreza",
+    "EXTINCION.AbilityInt": "Inteligencia",
+    "EXTINCION.AbilityStr": "Fuerza",
+    "EXTINCION.AbilityNer": "Nervio"
+}
