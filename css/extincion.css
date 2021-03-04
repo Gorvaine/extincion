@@ -4,9 +4,14 @@
   font-family: "Roboto", sans-serif;
 }
 
+.rollable {
+  font-weight: bold;
+}
+
 .rollable:hover, .rollable:focus {
   color: #000;
   text-shadow: 0 0 10px red;
+  font-weight: bolder;
   cursor: pointer;
 }
 
@@ -245,4 +250,19 @@
   -ms-flex: 0 0 86px;
   flex: 0 0 86px;
   text-align: right;
+}
+
+.abilities {
+  gap: 0px;
+  margin: 0px;
+  row-gap: 0px;
+  -webkit-column-gap: 0px;
+  -moz-column-gap: 0px;
+  column-gap: 0px;
+  padding: 0px;
+  border: 1px solid #999;
+}
+
+.ability {
+  border: none;
 }

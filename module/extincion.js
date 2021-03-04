@@ -45,3 +45,7 @@ Hooks.once('init', async function() {
     return str.toLowerCase();
   });
 });
+
+Hooks.on('renderMessage', async function() {
+  console.log("dawd");
+});

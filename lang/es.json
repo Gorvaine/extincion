@@ -5,5 +5,6 @@
     "EXTINCION.AbilityDex": "Destreza",
     "EXTINCION.AbilityInt": "Inteligencia",
     "EXTINCION.AbilityStr": "Fuerza",
-    "EXTINCION.AbilityNer": "Nervio"
+    "EXTINCION.AbilityNer": "Nervio",
+    "EXTINCION.rolling": "Tirando dado de "
 }

@@ -3,10 +3,12 @@
 }
 
 .rollable {
+  font-weight: bold;
   &:hover,
   &:focus {
     color: #000;
     text-shadow: 0 0 10px red;
+    font-weight: bolder;
     cursor: pointer;
   }
 }

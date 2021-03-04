@@ -33,11 +33,8 @@
           <div class="abilities grid grid-3col">
             {{#each data.abilities as |ability key|}}
               <div class="ability flexrow flex-group-center">
-                <label for="data.abilities.{{key}}.value" class="resource-label">{{ability.label}}</label>
-                <input type="text" name="data.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number"/>
-                <span class="ability-mod rollable" data-roll="d20" data-label="{{key}}">
-                  <img src="icons/d20.svg" alt="Roll d20">
-                </span>
+                  <span class="ability rollable" data-roll="d20" data-label="{{ability.label}}">{{ability.label}}</span>
+                  <input type="text" name="data.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number"/>
               </div>
             {{/each}}
           </div>

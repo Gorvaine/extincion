@@ -16,3 +16,18 @@
   @import 'components/tabs';
   @import 'components/items';
 }
+
+
+
+.abilities {
+  gap: 0px;
+  margin: 0px;
+  row-gap: 0px;
+  column-gap: 0px;
+  padding: 0px;
+  border: 1px solid #999;
+}
+
+.ability {
+  border: none;
+}
