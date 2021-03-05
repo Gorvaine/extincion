@@ -9,6 +9,6 @@
     "EXTINCION.rolling": "Tirando dado de ",
     "EXTINCION.success": "Éxito",
     "EXTINCION.failure": "Fallo",
-    "EXTINCION.crit": "Crítico!",
-    "EXTINCION.flaw": "Pifia!"
+    "EXTINCION.crit": "Éxito Crítico!",
+    "EXTINCION.flaw": "Fallo Crítico!"
 }

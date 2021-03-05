@@ -56,18 +56,18 @@ Hooks.on("renderChatMessage", (message, html, data) => {
   var val = data.author.character.data.data.abilities[message.data.content].value
   var val_oper = val - message.roll.total
   var str = `${html.find(".dice-formula").text()} - ${val}(${message.data.content})`
-  var strFormula = `${html.find(".dice-formula").text()} | ${val}(${message.data.content})`
+  var strFormula = `${message.roll.total} | ${val}(${message.data.content})`
   if (message.roll.total == 1){
     html.find(".dice-total").addClass("success");
     str = game.i18n.localize("EXTINCION.crit");
   } else if (message.roll.total == 20){
-    html.find(".dice-total").addClass("fail");
+    html.find(".dice-total").addClass("failure");
     str = game.i18n.localize("EXTINCION.flaw");
   } else if (val_oper > 0){
     html.find(".dice-total").addClass("success");
     str = game.i18n.localize("EXTINCION.success");
   } else if (val_oper <= 0){
-    html.find(".dice-total").addClass("fail");
+    html.find(".dice-total").addClass("failure");
     str = game.i18n.localize("EXTINCION.failure");
   }
 
@@ -75,6 +75,6 @@ Hooks.on("renderChatMessage", (message, html, data) => {
   html.find(".dice-formula").text(strFormula);  
   html.find(".dice-total").text(str.toString())
 
-  html.append("<div class=\"success\">Probando tirada</div>");
+  // html.append("<div class=\"success\">Probando tirada</div>");
 
 });
