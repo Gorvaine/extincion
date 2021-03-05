@@ -46,6 +46,6 @@ Hooks.once('init', async function() {
   });
 });
 
-Hooks.on('renderMessage', async function() {
+Hooks.on('renderChatMessage', (messageId, context) => {
   console.log("dawd");
 });
