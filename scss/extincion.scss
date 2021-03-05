@@ -38,11 +38,15 @@
 
 .app ,
 .-webkit-scrollbar-thumb,
-.chat-message,
-.window-content,
-.window-app {
+.chat-message {
    color: #44443a;
    background: #ececec;
+}
+
+.window-content,
+.window-app {
+  color: #44443a;
+  background: #ececec;
 }
 
 // .window-app{
