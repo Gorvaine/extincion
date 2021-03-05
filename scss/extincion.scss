@@ -36,17 +36,18 @@
 //    background-color: #ececec;
 // }
 
-.app ,
+#sidebar,
 .-webkit-scrollbar-thumb,
-.chat-message {
+.chat-message,
+#chat-form{
    color: #44443a;
    background: #ececec;
 }
 
 .window-content,
 .window-app {
-  color: #44443a;
-  background: #ececec;
+  color: #44443a !important;
+  background: #ececec !important;
 }
 
 // .window-app{

@@ -266,3 +266,17 @@
 .ability {
   border: none;
 }
+
+#sidebar,
+.-webkit-scrollbar-thumb,
+.chat-message,
+#chat-form {
+  color: #44443a;
+  background: #ececec;
+}
+
+.window-content,
+.window-app {
+  color: #44443a !important;
+  background: #ececec !important;
+}
