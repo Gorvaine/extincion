@@ -36,8 +36,12 @@
 //    background-color: #ececec;
 // }
 
-.app {
+.app ,
+.-webkit-scrollbar-thumb,
+.chat-message,
+.window-content {
    color: #44443a;
+   background: #ececec;
 }
 
 // .window-app{
