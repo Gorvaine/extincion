@@ -20,21 +20,44 @@
 
 
 .abilities {
-  gap: 0px;
   margin: 0px;
   row-gap: 0px;
-  column-gap: 0px;
-  padding: 0px;
+  column-gap: 6%;
   border: 1px solid #999;
+  padding-left: 15px;
+  padding-right: 0px;
 }
 
 .ability {
   border: none;
 }
 
+.ab-desc {
+  margin: 0;
+  justify-items: center;
+  align-items: center;
+  column-gap: 0;
+}
+
+.ab-right {
+  width: 3em;
+}
+
 // *{
 //    background-color: #ececec;
 // }
+
+.actor{
+  width:650px;
+  height: 820px;
+}
+
+.extincion .sheet-header .profile-img {
+  -webkit-box-flex: 0;
+  flex: 0 0 100px;
+  height: 125px;
+  margin-right: 10px;
+}
 
 #sidebar,
 .-webkit-scrollbar-thumb,

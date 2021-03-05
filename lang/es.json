@@ -10,5 +10,9 @@
     "EXTINCION.success": "Éxito",
     "EXTINCION.failure": "Fallo",
     "EXTINCION.crit": "Éxito Crítico!",
-    "EXTINCION.flaw": "Fallo Crítico!"
+    "EXTINCION.flaw": "Fallo Crítico!",
+    "EXTINCION.HitPoints": "Puntos de golpe",
+    "EXTINCION.Adrenaline": "Adrenalina",
+    "EXTINCION.AdrenalineFailure": "Pierdes Adrenalina!",
+    "EXTINCION.AdrenalineSuccess": "Éxito!"
 }

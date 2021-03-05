@@ -6,6 +6,7 @@
 
 .rollable {
   font-weight: bold;
+  cursor: pointer;
 }
 
 .rollable:hover, .rollable:focus {
@@ -253,18 +254,46 @@
 }
 
 .abilities {
-  gap: 0px;
   margin: 0px;
   row-gap: 0px;
-  -webkit-column-gap: 0px;
-  -moz-column-gap: 0px;
-  column-gap: 0px;
-  padding: 0px;
+  -webkit-column-gap: 6%;
+  -moz-column-gap: 6%;
+  column-gap: 6%;
   border: 1px solid #999;
+  padding-left: 15px;
+  padding-right: 0px;
 }
 
 .ability {
   border: none;
+}
+
+.ab-desc {
+  margin: 0;
+  justify-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-column-gap: 0;
+  -moz-column-gap: 0;
+  column-gap: 0;
+}
+
+.ab-right {
+  width: 3em;
+}
+
+.actor {
+  width: 650px;
+  height: 820px;
+}
+
+.extincion .sheet-header .profile-img {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 100px;
+  flex: 0 0 100px;
+  height: 125px;
+  margin-right: 10px;
 }
 
 #sidebar,
