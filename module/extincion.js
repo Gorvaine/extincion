@@ -54,19 +54,19 @@ Hooks.on("renderChatMessage", (message, html, data) => {
   if ( !message.isRoll ) return;
    
   var val = data.author.character.data.data.abilities[message.data.content].value
-  var val_oper = message.roll.total - val
+  var val_oper = val - message.roll.total
   var str = `${html.find(".dice-formula").text()} - ${val}(${message.data.content})`
   var strFormula = `${html.find(".dice-formula").text()} | ${val}(${message.data.content})`
-  if (message.roll.total == 20){
+  if (message.roll.total == 1){
     html.find(".dice-total").addClass("success");
     str = game.i18n.localize("EXTINCION.crit");
-  } else if (message.roll.total == 1){
+  } else if (message.roll.total == 20){
     html.find(".dice-total").addClass("fail");
     str = game.i18n.localize("EXTINCION.flaw");
-  } else if (val_oper > 1){
+  } else if (val_oper > 0){
     html.find(".dice-total").addClass("success");
     str = game.i18n.localize("EXTINCION.success");
-  } else if (val_oper <= 1){
+  } else if (val_oper <= 0){
     html.find(".dice-total").addClass("fail");
     str = game.i18n.localize("EXTINCION.failure");
   }
