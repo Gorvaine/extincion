@@ -49,10 +49,14 @@ Hooks.once('init', async function() {
 /**
  * Highlight critical success or failure on d20 rolls
  */
-Hooks.on("renderChatMessage", (message, data, html) => {
+Hooks.on("renderChatMessage", (message, html, data) => {
   console.log("Mensaje hookeado!")
-  if ( !message.isRoll || message.roll.parts[0].faces !== 20 ) return;
+  if ( !message.isRoll ) return;
   let d20 = message.roll.parts[0].total;
-  if ( d20 === 20 ) html.find(".dice-total").addClass("success");
+  if ( d20 > 1 ) {
+   html.find(".dice-total").addClass("success");
+   html.find(".dice-formula").addClass("dice-tooltip");
+   html.append("<div class=\"success\">Probando tirada</div>");
+  }
   else if ( d20 === 1 ) html.find(".dice-total").addClass("failure");
 });
