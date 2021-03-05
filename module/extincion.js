@@ -52,11 +52,32 @@ Hooks.once('init', async function() {
 Hooks.on("renderChatMessage", (message, html, data) => {
   console.log("Mensaje hookeado!")
   if ( !message.isRoll ) return;
-  let d20 = message.roll.parts[0].total;
-  if ( d20 > 1 ) {
-   html.find(".dice-total").addClass("success");
-   html.find(".dice-formula").addClass("dice-tooltip");
-   html.append("<div class=\"success\">Probando tirada</div>");
+   
+  var val = data.author.character.data.data.abilities[message.data.content].value
+  var val_oper = message.roll.total - val
+  var str = `${html.find(".dice-formula").text()} - ${val}(${message.data.content})`
+  var strFormula = `${html.find(".dice-formula").text()} | ${val}(${message.data.content})`
+  if (message.roll.total == 20){
+    html.find(".dice-total").addClass("success");
+    str = game.i18n.localize("EXTINCION.crit");
   }
-  else if ( d20 === 1 ) html.find(".dice-total").addClass("failure");
+  elseif (message.roll.total == 1){
+    html.find(".dice-total").addClass("fail");
+    str = game.i18n.localize("EXTINCION.flaw");
+  }
+  elseif (val_oper > 1){
+    html.find(".dice-total").addClass("success");
+    str = game.i18n.localize("EXTINCION.success");
+  }
+  elseif (val_oper <= 1){
+    html.find(".dice-total").addClass("fail");
+    str = game.i18n.localize("EXTINCION.failure");
+  }
+
+  html.find(".dice-formula").addClass("dice-tooltip");
+  html.find(".dice-formula").text(strFormula);  
+  html.find(".dice-total").text(str.toString())
+
+  html.append("<div class=\"success\">Probando tirada</div>");
+
 });

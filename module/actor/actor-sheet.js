@@ -111,7 +111,7 @@ export class extincionActorSheet extends ActorSheet {
     // }
     if (dataset.roll) {
       let roll = new Roll(dataset.roll, this.actor.data.data).roll();
-      let cnt = `${game.i18n.localize("EXTINCION.rolling")} ${dataset.label}: ${roll.results} hola`;
+      let cnt = dataset.label;
       let msg = {
         user: game.userId,
         type: CHAT_MESSAGE_TYPES.ROLL,

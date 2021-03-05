@@ -6,5 +6,9 @@
     "EXTINCION.AbilityInt": "Inteligencia",
     "EXTINCION.AbilityStr": "Fuerza",
     "EXTINCION.AbilityNer": "Nervio",
-    "EXTINCION.rolling": "Tirando dado de "
+    "EXTINCION.rolling": "Tirando dado de ",
+    "EXTINCION.success": "Éxito",
+    "EXTINCION.failure": "Fallo",
+    "EXTINCION.crit": "Crítico!",
+    "EXTINCION.flaw": "Pifia!"
 }
