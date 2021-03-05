@@ -60,16 +60,13 @@ Hooks.on("renderChatMessage", (message, html, data) => {
   if (message.roll.total == 20){
     html.find(".dice-total").addClass("success");
     str = game.i18n.localize("EXTINCION.crit");
-  }
-  elseif (message.roll.total == 1){
+  } else if (message.roll.total == 1){
     html.find(".dice-total").addClass("fail");
     str = game.i18n.localize("EXTINCION.flaw");
-  }
-  elseif (val_oper > 1){
+  } else if (val_oper > 1){
     html.find(".dice-total").addClass("success");
     str = game.i18n.localize("EXTINCION.success");
-  }
-  elseif (val_oper <= 1){
+  } else if (val_oper <= 1){
     html.find(".dice-total").addClass("fail");
     str = game.i18n.localize("EXTINCION.failure");
   }
