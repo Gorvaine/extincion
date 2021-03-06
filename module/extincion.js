@@ -54,15 +54,17 @@ Hooks.on("renderChatMessage", (message, html, data) => {
     if (!message.isRoll | message.data.content == "undefined") return;
 
     // si es una tirada de adrenalina
-    if (message.data.content == "adrenaline") {
+    if (message.data.content == "adrenaline" || message.data.content.includes("usedice")) {
         if (message.roll.total <= 2) {
             html.find(".dice-total").addClass("failure");
-            str = game.i18n.localize("EXTINCION.AdrenalineFailure");
+            if (message.data.content.includes("adrenaline")) str = game.i18n.localize("EXTINCION.AdrenalineFailure");
+            if (message.data.content.includes("usedice")) str = game.i18n.localize("EXTINCION.UseDiceFailure");
             // html.append("Pierdes Adrenalina!");
 
         } else if (message.roll.total > 2) {
             html.find(".dice-total").addClass("success");
-            str = game.i18n.localize("EXTINCION.AdrenalineSuccess");
+            if (message.data.content.includes("adrenaline")) str = game.i18n.localize("EXTINCION.AdrenalineSuccess");
+            if (message.data.content.includes("usedice")) str = game.i18n.localize("EXTINCION.UseDiceSuccess");
         }
         html.find(".dice-formula").addClass("dice-tooltip");
         html.find(".dice-formula").text(strFormula);

@@ -6,7 +6,6 @@
 
 .rollable {
   font-weight: bold;
-  cursor: pointer;
 }
 
 .rollable:hover, .rollable:focus {
@@ -308,4 +307,33 @@
 .window-app {
   color: #44443a !important;
   background: #ececec !important;
+}
+
+.datausedice {
+  min-width: 100%;
+}
+
+.item-usedice {
+  margin: 0;
+}
+
+.item-weight {
+  margin: 0;
+}
+
+.fas {
+  margin-right: 5px;
+}
+
+.diceicon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  border: 0;
+  padding: 0;
 }

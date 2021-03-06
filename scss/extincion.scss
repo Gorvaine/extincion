@@ -5,72 +5,95 @@
 @import 'utils/variables';
 
 /* Global styles */
+
 @import 'global/window';
 @import 'global/grid';
 @import 'global/flex';
 
 /* Styles limited to extincion sheets */
+
 .extincion {
-  @import 'components/forms';
-  @import 'components/resource';
-  @import 'components/tabs';
-  @import 'components/items';
+    @import 'components/forms';
+    @import 'components/resource';
+    @import 'components/tabs';
+    @import 'components/items';
 }
 
-
-
 .abilities {
-  margin: 0px;
-  row-gap: 0px;
-  column-gap: 6%;
-  border: 1px solid #999;
-  padding-left: 15px;
-  padding-right: 0px;
+    margin: 0px;
+    row-gap: 0px;
+    column-gap: 6%;
+    border: 1px solid #999;
+    padding-left: 15px;
+    padding-right: 0px;
 }
 
 .ability {
-  border: none;
+    border: none;
 }
 
 .ab-desc {
-  margin: 0;
-  justify-items: center;
-  align-items: center;
-  column-gap: 0;
+    margin: 0;
+    justify-items: center;
+    align-items: center;
+    column-gap: 0;
 }
 
 .ab-right {
-  width: 3em;
+    width: 3em;
 }
 
 // *{
 //    background-color: #ececec;
 // }
-
-.actor{
-  width:650px;
-  height: 820px;
+.actor {
+    width: 650px;
+    height: 820px;
 }
 
 .extincion .sheet-header .profile-img {
-  -webkit-box-flex: 0;
-  flex: 0 0 100px;
-  height: 125px;
-  margin-right: 10px;
+    -webkit-box-flex: 0;
+    flex: 0 0 100px;
+    height: 125px;
+    margin-right: 10px;
 }
 
 #sidebar,
 .-webkit-scrollbar-thumb,
 .chat-message,
-#chat-form{
-   color: #44443a;
-   background: #ececec;
+#chat-form {
+    color: #44443a;
+    background: #ececec;
 }
 
 .window-content,
 .window-app {
-  color: #44443a !important;
-  background: #ececec !important;
+    color: #44443a !important;
+    background: #ececec !important;
+}
+
+.datausedice {
+    min-width: 100%;
+}
+
+.item-usedice {
+    margin: 0;
+}
+
+.item-weight {
+    margin: 0;
+}
+
+.fas {
+    margin-right: 5px;
+}
+
+.diceicon {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    border: 0;
+    padding: 0;
 }
 
 // .window-app{

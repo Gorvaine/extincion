@@ -13,7 +13,7 @@ export class extincionActorSheet extends ActorSheet {
             template: "systems/extincion/templates/actor/actor-sheet.html",
             width: 600,
             height: 800,
-            tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description" }]
+            tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "items" }]
         });
     }
 
@@ -110,9 +110,19 @@ export class extincionActorSheet extends ActorSheet {
         //   });
         // }
         if (dataset.roll) {
-            let roll = new Roll(dataset.roll, this.actor.data.data).roll();
             let cnt = dataset.label;
-            let prepflavor = `${EXTINCION.abilities[dataset.label]}`
+            let roll
+            let prepflavor
+            let flavor
+            if (cnt.includes("usedice")) {
+                let itemid = cnt.split(" ")[1];
+                roll = new Roll(dataset.roll, this.actor.data.data).roll();
+                flavor = `${game.i18n.localize("EXTINCION.userolling")} ${this.actor.items.get(itemid).name}`;
+            } else {
+                roll = new Roll(dataset.roll, this.actor.data.data).roll();
+                prepflavor = `${EXTINCION.abilities[dataset.label]}`;
+                flavor = `${game.i18n.localize("EXTINCION.rolling")}${game.i18n.localize(prepflavor)}`
+            }
             let msg = {
                 user: game.userId,
                 type: CHAT_MESSAGE_TYPES.ROLL,
@@ -120,7 +130,7 @@ export class extincionActorSheet extends ActorSheet {
                 rollMode: game.settings.get("core", "rollMode"),
                 actor: game.actors.get(this.actor),
                 content: cnt,
-                flavor: `${game.i18n.localize("EXTINCION.rolling")}${game.i18n.localize(prepflavor)}`
+                flavor: flavor
             };
             ChatMessage.create(msg);
         }

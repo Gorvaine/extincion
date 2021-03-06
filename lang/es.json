@@ -7,6 +7,7 @@
     "EXTINCION.AbilityStr": "Fuerza",
     "EXTINCION.AbilityNer": "Nervio",
     "EXTINCION.rolling": "Tirando dado de ",
+    "EXTINCION.userolling": "Tirando dado de uso de ",
     "EXTINCION.success": "Éxito",
     "EXTINCION.failure": "Fallo",
     "EXTINCION.crit": "Éxito Crítico!",
@@ -14,5 +15,11 @@
     "EXTINCION.HitPoints": "Puntos de golpe",
     "EXTINCION.Adrenaline": "Adrenalina",
     "EXTINCION.AdrenalineFailure": "Pierdes Adrenalina!",
-    "EXTINCION.AdrenalineSuccess": "Éxito!"
+    "EXTINCION.AdrenalineSuccess": "Éxito",
+    "EXTINCION.UseDice": "uso",
+    "EXTINCION.Weight": "Carga",
+    "EXTINCION.Properties": "Propiedades",
+    "EXTINCION.Description": "Descripción",
+    "EXTINCION.UseDiceFailure": "Pierdes un dado de uso!",
+    "EXTINCION.UseDiceSuccess": "Éxito"
 }
