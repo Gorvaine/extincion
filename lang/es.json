@@ -21,5 +21,10 @@
     "EXTINCION.Properties": "Propiedades",
     "EXTINCION.Description": "Descripción",
     "EXTINCION.UseDiceFailure": "Pierdes un dado de uso!",
-    "EXTINCION.UseDiceSuccess": "Éxito"
+    "EXTINCION.UseDiceSuccess": "Éxito",
+    "EXTINCION.Name": "Nombre",
+    "EXTINCION.Class": "Clase",
+    "EXTINCION.Experience": "Experiencia",
+    "EXTINCION.Level": "Nivel",
+    "EXTINCION.Background": "Pasado"
 }

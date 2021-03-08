@@ -34,10 +34,10 @@
                     "value": 0
                 },
                 "class": {
-                    "value": 1
+                    "name": ""
                 },
                 "background": {
-                    "value": 1
+                    "text": ""
                 }
             },
             "abilities": {

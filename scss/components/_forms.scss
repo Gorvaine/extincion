@@ -1,55 +1,197 @@
 .item-form {
-  font-family: $font-primary;
+    font-family: $font-primary;
+}
+
+.label-input-nowrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-items: center;
+    align-items: center;
+}
+
+.grid_pc {
+    display: grid;
+    grid-template-columns: [first] 44px [title] 216px-44px [main-stats] auto [endcol];
+    grid-template-rows: [first] 19px [main-stats] 142px-19px [exp-levels] 190px-142px [abilities] 282px-190px [life-adrenaline] 426px-282px [talents-head] 448px-426px [talents] 575px-448px [items-head] 596px-575px [items] auto [endrow];
+    grid-gap: 0;
+}
+
+.logo {
+    display: flex;
+    flex-wrap: nowrap;
+    grid-column-start: 1;
+    grid-row-start: 6;
+    transform: rotate(-90deg);
+    transform-origin: 0 0;
+    width: 800px;
+    font-size: 0.6em;
+}
+
+.grande {
+    background-color: $c-back;
+    color: $c-fore;
+    width: 200px;
+    font-size: 5.18em;
+    height: 1em;
 }
 
 .sheet-header {
-  flex: 0 0 210px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  margin-bottom: 10px;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 4;
+}
 
-  .profile-img {
-    flex: 0 0 100px;
-    height: 100px;
-    margin-right: 10px;
-  }
+.header-picture-main {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 4;
+}
 
-  .header-fields {
-    flex: 1;
-  }
+.header-fields {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
 
-  h1.charname {
-    height: 50px;
-    padding: 0px;
-    margin: 5px 0;
-    border-bottom: 0;
-    input {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-    }
-  }
+.header-progression {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 5;
+}
+
+.header-abilities {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 6;
+}
+
+.header-life {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 5;
+    grid-row-end: 6;
+}
+
+h1 {
+    font-size: 1.395em;
+}
+
+h1.label {
+    display: flex;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 1;
+    background-color: $c-black;
+    color: $c-fore;
+    margin: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+h1.input {
+    flex-grow: 2;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    height: 120%;
 }
 
 .sheet-tabs {
-  flex: 0;
+    display: flex;
+    justify-content: space-around;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 6;
+    grid-row-end: 7;
+    line-height: 24px !important;
+    height: 24px !important;
+    flex: 0;
+    margin: 0 !important;
+    border: 0 !important;
+    background-color: $c-black;
+    color: $c-fore;
+}
+
+.tab-item {
+    margin: 0 !important;
+    border: 0 !important;
+    height: 24px;
+}
+
+.active {
+    text-decoration: underline;
+}
+
+.item {
+    align-self: center;
+}
+
+.sheet-body {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 7;
+    grid-row-end: 8;
+}
+
+.abilities {
+    margin: 0px;
+    row-gap: 0px;
+    column-gap: 6%;
+    border: 1px solid #999;
+    padding-left: 15px;
+    padding-right: 0px;
+}
+
+.ability {
+    border: none;
+}
+
+.ab {
+    margin: 0;
+    align-items: center;
+    column-gap: 0;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.ab-desc {
+    justify-self: left;
+}
+
+.ab-right {
+    width: 3em;
+    text-align: center;
+    justify-self: right;
+    margin-right: 20px;
+}
+
+// *{
+//    background-color: #ececec;
+// }
+.actor {
+    // width: 650px;
+    width: 583px;
+    height: 827px;
 }
 
 .sheet-body,
 .sheet-body .tab,
 .sheet-body .tab .editor {
-  height: 100%;
+    height: 100%;
 }
 
 .tox {
-  .tox-editor-container {
-    background: $c-white;
-  }
-
-  .tox-edit-area {
-    padding: 0 8px;
-  }
+    .tox-editor-container {
+        background: $c-white;
+    }
+    .tox-edit-area {
+        padding: 0 8px;
+    }
 }
