@@ -1,0 +1,6 @@
+.grid {
+    display: grid;
+    grid-template-columns: [first] 44px [title] 216px [main-stats] auto [endcol];
+    grid-template-rows: [first] 19px [main-stats] 142px [exp-levels] 190px [abilities] 282px [life-adrenaline] 426px [talents-head] 448px [talents] 575px [items-head] 596px [items] auto [endrow];
+    grid-gap: 0;
+}

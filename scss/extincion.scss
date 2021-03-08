@@ -19,6 +19,10 @@
     @import 'components/items';
 }
 
+.sheetpc {
+    @import 'sheet/pc';
+}
+
 .abilities {
     margin: 0px;
     row-gap: 0px;
@@ -47,8 +51,9 @@
 //    background-color: #ececec;
 // }
 .actor {
-    width: 650px;
-    height: 820px;
+    // width: 650px;
+    width: 583px;
+    height: 827px;
 }
 
 .extincion .sheet-header .profile-img {
