@@ -15,6 +15,7 @@
     grid-template-columns: [first] 44px [title] 216px-44px [main-stats] auto [endcol];
     grid-template-rows: [first] 19px [main-stats] 142px-19px [exp-levels] 190px-142px [abilities] 282px-190px [life-adrenaline] 426px-282px [talents-head] 448px-426px [talents] 575px-448px [items-head] 596px-575px [items] auto [endrow];
     grid-gap: 0;
+    margin:  -10px;
 }
 
 .logo {
@@ -55,6 +56,9 @@
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 4;
+    border: 3px solid;
+    border-style: double;
+    align-content: center;
 }
 
 .header-fields {
@@ -89,10 +93,10 @@
 
 h1 {
     font-size: 1.395em;
+    font-family: "Aveny";
 }
 
 h1.label {
-    font-style: "Aveny";
     display: flex;
     // font-weight: bold;
     justify-content: center;
@@ -187,11 +191,13 @@ h1.input {
     margin-right: 20px;
 }
 
-.extincion .sheet-header .profile-img {
+img.profile-img {
     -webkit-box-flex: 0;
     flex: 0 0 100px;
     height: 100%;
     margin-right: 10px;
+    margin-left: 10px;
+    align-self: center;
 }
 
 // *{
