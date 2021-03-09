@@ -20,18 +20,20 @@
 .logo {
     display: flex;
     flex-wrap: nowrap;
-    font-style: "Aveny";
+    font-family: "Aveny";
     grid-column-start: 1;
     grid-row-start: 6;
     transform: rotate(-90deg);
     transform-origin: 0 0;
     width: 800px;
     font-size: 0.6em;
+    margin-left: 32px;
 }
 
 .grande {
+    margin-top: -32px;
     background-color: $c-black;
-    font-style: "Subspace";
+    font-family: "Subspace";
     color: $c-fore;
     width: 200px;
     font-size: 5.18em;
