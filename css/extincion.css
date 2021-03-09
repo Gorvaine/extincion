@@ -1,7 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Martel:wght@400;800&family=Roboto:wght@300;400;500&display=swap");
+@font-face {
+  font-family: "Subspace";
+  src: url("//db.onlinewebfonts.com/t/a13146c175e06844feb45e0997e1b39b.eot");
+  src: url("//db.onlinewebfonts.com/t/a13146c175e06844feb45e0997e1b39b.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/a13146c175e06844feb45e0997e1b39b.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/a13146c175e06844feb45e0997e1b39b.woff") format("woff"), url("//db.onlinewebfonts.com/t/a13146c175e06844feb45e0997e1b39b.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/a13146c175e06844feb45e0997e1b39b.svg#Subspace") format("svg");
+}
+
+@font-face {
+  font-family: "Aveny";
+  src: url("//db.onlinewebfonts.com/t/6cdc4cc6b38c8e89e8721abe8aed4ab9.eot");
+  src: url("//db.onlinewebfonts.com/t/6cdc4cc6b38c8e89e8721abe8aed4ab9.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/6cdc4cc6b38c8e89e8721abe8aed4ab9.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/6cdc4cc6b38c8e89e8721abe8aed4ab9.woff") format("woff"), url("//db.onlinewebfonts.com/t/6cdc4cc6b38c8e89e8721abe8aed4ab9.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/6cdc4cc6b38c8e89e8721abe8aed4ab9.svg#Aveny T WEB") format("svg");
+}
+
 /* Global styles */
 .window-app {
   font-family: "Roboto", sans-serif;
+  padding: 0;
 }
 
 .rollable {
@@ -145,6 +158,7 @@
   grid-template-columns: [first] 44px [title] 172px [main-stats] auto [endcol];
   grid-template-rows: [first] 19px [main-stats] 123px [exp-levels] 48px [abilities] 92px [life-adrenaline] 144px [talents-head] 22px [talents] 127px [items-head] 21px [items] auto [endrow];
   grid-gap: 0;
+  margin: -10px;
 }
 
 .extincion .logo {
@@ -153,6 +167,7 @@
   display: flex;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
+  font-family: "Aveny";
   grid-column-start: 1;
   grid-row-start: 6;
   -webkit-transform: rotate(-90deg);
@@ -161,16 +176,25 @@
   -webkit-transform-origin: 0 0;
   -ms-transform-origin: 0 0;
   transform-origin: 0 0;
-  width: 800px;
-  font-size: 0.6em;
+  width: 500px;
+  font-size: 0.85em;
+  padding-left: 5px;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  margin-left: 32px;
 }
 
 .extincion .grande {
-  background-color: #44443a;
-  color: #ececec;
-  width: 200px;
-  font-size: 5.18em;
-  height: 1em;
+  margin-top: -32px;
+  background-color: #000;
+  font-family: "Subspace";
+  color: #fff;
+  font-size: 3em;
+  height: 1.2em;
+  justify-self: right;
+  padding: 3px 15px 0px 10px;
+  border: 1px solid;
 }
 
 .extincion .sheet-header {
@@ -183,8 +207,10 @@
 .extincion .header-picture-main {
   grid-column-start: 2;
   grid-column-end: 3;
-  grid-row-start: 1;
+  grid-row-start: 2;
   grid-row-end: 4;
+  -ms-flex-line-pack: center;
+  align-content: center;
 }
 
 .extincion .header-fields {
@@ -206,6 +232,9 @@
   grid-column-end: 3;
   grid-row-start: 4;
   grid-row-end: 6;
+  padding-left: 10px;
+  align-self: center;
+  border-left: 1px solid;
 }
 
 .extincion .header-life {
@@ -213,17 +242,24 @@
   grid-column-end: 4;
   grid-row-start: 5;
   grid-row-end: 6;
+  margin-right: 1.25em;
+  margin-left: 0.5em;
+  grid-template-rows: 1fr 1fr;
+}
+
+.extincion .damage-label {
+  margin-top: 1em;
 }
 
 .extincion h1 {
   font-size: 1.395em;
+  font-family: "Aveny";
 }
 
 .extincion h1.label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  font-weight: bold;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
@@ -233,10 +269,13 @@
   -ms-flex-negative: 1;
   flex-shrink: 1;
   background-color: #000;
-  color: #ececec;
-  margin: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
+  color: #fff;
+  margin: 0.2em;
+  padding: 0.2em 0.4em 0em 0.4em;
+}
+
+.extincion .label-input-nowrap {
+  margin: 0 1em 0 0.5em;
 }
 
 .extincion h1.input {
@@ -246,7 +285,7 @@
   margin: 0;
   padding: 0;
   border: 0;
-  height: 120%;
+  height: 110%;
 }
 
 .extincion .sheet-tabs {
@@ -267,13 +306,20 @@
   margin: 0 !important;
   border: 0 !important;
   background-color: #000;
-  color: #ececec;
+  color: #fff;
 }
 
 .extincion .tab-item {
   margin: 0 !important;
   border: 0 !important;
   height: 24px;
+}
+
+.extincion .tab-item hover {
+  color: white;
+  text-shadow: 0 0 10px red;
+  font-weight: bolder;
+  cursor: pointer;
 }
 
 .extincion .active {
@@ -290,6 +336,7 @@
   grid-column-end: 4;
   grid-row-start: 7;
   grid-row-end: 8;
+  padding: 0 1em 0 1em;
 }
 
 .extincion .abilities {
@@ -308,7 +355,6 @@
 }
 
 .extincion .ab {
-  margin: 0;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -316,18 +362,37 @@
   -moz-column-gap: 0;
   column-gap: 0;
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 5fr 1fr;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .extincion .ab-desc {
   justify-self: left;
+  margin-right: 10px;
+  -webkit-column-gap: 0;
+  -moz-column-gap: 0;
+  column-gap: 0;
+  justify-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .extincion .ab-right {
   width: 3em;
   text-align: center;
   justify-self: right;
-  margin-right: 20px;
+  margin-right: 0.5em;
+}
+
+.extincion img.profile-img {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 100px;
+  flex: 0 0 100px;
+  height: 100%;
+  -ms-flex-item-align: center;
+  align-self: center;
 }
 
 .extincion .actor {
@@ -352,6 +417,11 @@
 .extincion .resource-label {
   font-weight: bold;
   text-transform: uppercase;
+  margin-top: 1em;
+}
+
+.extincion .adrenaline-label {
+  cursor: pointer;
 }
 
 .extincion .tabs {
@@ -410,47 +480,9 @@
   text-align: right;
 }
 
-.abilities {
-  margin: 0px;
-  row-gap: 0px;
-  -webkit-column-gap: 6%;
-  -moz-column-gap: 6%;
-  column-gap: 6%;
-  border: 1px solid #999;
-  padding-left: 15px;
-  padding-right: 0px;
-}
-
-.ability {
-  border: none;
-}
-
-.ab-desc {
-  margin: 0;
-  justify-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-column-gap: 0;
-  -moz-column-gap: 0;
-  column-gap: 0;
-}
-
-.ab-right {
-  width: 3em;
-}
-
-.actor {
+.sheet .actor {
   width: 583px;
   height: 827px;
-}
-
-.extincion .sheet-header .profile-img {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 100px;
-  flex: 0 0 100px;
-  height: 125px;
-  margin-right: 10px;
 }
 
 #sidebar,
@@ -458,13 +490,13 @@
 .chat-message,
 #chat-form {
   color: #44443a;
-  background: #ececec;
+  background: #fff;
 }
 
 .window-content,
 .window-app {
   color: #44443a !important;
-  background: #ececec !important;
+  background: #fff !important;
 }
 
 .datausedice {

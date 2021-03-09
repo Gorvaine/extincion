@@ -13,63 +13,61 @@
 /* Styles limited to extincion sheets */
 
 .extincion {
-    @import 'components/forms';
-    @import 'components/resource';
-    @import 'components/tabs';
-    @import 'components/items';
+  @import 'components/forms';
+  @import 'components/resource';
+  @import 'components/tabs';
+  @import 'components/items';
 }
 
 .sheetpc {
-    @import 'sheet/pc';
+  @import 'sheet/pc';
 }
-
-
 
 // *{
 //    background-color: #ececec;
 // }
-.actor {
-    // width: 650px;
-    width: 583px;
-    height: 827px;
+.sheet .actor {
+  // width: 650px;
+  width: 583px;
+  height: 827px;
 }
 
 #sidebar,
 .-webkit-scrollbar-thumb,
 .chat-message,
 #chat-form {
-    color: #44443a;
-    background: #ececec;
+  color: #44443a;
+  background: $c-fore;
 }
 
 .window-content,
 .window-app {
-    color: #44443a !important;
-    background: #ececec !important;
+  color: #44443a !important;
+  background: $c-fore !important;
 }
 
 .datausedice {
-    min-width: 100%;
+  min-width: 100%;
 }
 
 .item-usedice {
-    margin: 0;
+  margin: 0;
 }
 
 .item-weight {
-    margin: 0;
+  margin: 0;
 }
 
 .fas {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 
 .diceicon {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: baseline;
-    border: 0;
-    padding: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: baseline;
+  border: 0;
+  padding: 0;
 }
 
 // .window-app{

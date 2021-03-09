@@ -1,87 +1,102 @@
 {
-    "Actor": {
-        "types": ["character"],
-        "templates": {
-            "base": {
-                "health": {
-                    "value": 8,
-                    "min": 0,
-                    "max": 10
-                },
-                "adrenaline": {
-                    "value": 8,
-                    "min": 0,
-                    "max": 10
-                },
-                "damage": {
-                    "value": 8,
-                    "min": 0
-                },
-                "unarmed": {
-                    "value": 8,
-                    "min": 0
-                }
-            }
+  "Actor": {
+    "types": ["character"],
+    "templates": {
+      "base": {
+        "health": {
+          "value": 8,
+          "min": 0,
+          "max": 10
         },
-        "character": {
-            "templates": ["base"],
-            "biography": "",
-            "attributes": {
-                "level": {
-                    "value": 1
-                },
-                "experience": {
-                    "value": 0
-                },
-                "class": {
-                    "name": ""
-                },
-                "background": {
-                    "text": ""
-                }
-            },
-            "abilities": {
-                "str": {
-                    "value": 10
-                },
-                "dex": {
-                    "value": 10
-                },
-                "con": {
-                    "value": 10
-                },
-                "int": {
-                    "value": 10
-                },
-                "ner": {
-                    "value": 10
-                },
-                "cha": {
-                    "value": 10
-                }
-            }
+        "adrenaline": {
+          "value": 8,
+          "min": 0,
+          "max": 10
+        },
+        "damage": {
+          "value": 8,
+          "min": 0
+        },
+        "unarmed": {
+          "value": 8,
+          "min": 0
+        },
+        "talent1": {
+          "text": ""
+        },
+        "talent2": {
+          "text": ""
+        },
+        "talent3": {
+          "text": ""
+        },
+        "talent4": {
+          "text": ""
+        },
+        "talent5": {
+          "text": ""
         }
+      }
     },
-    "Item": {
-        "types": ["tool", "weapon", "armor"],
-        "templates": {
-            "base": {
-                "weight": "1",
-                "description": "",
-                "properties": ""
-            }
+    "character": {
+      "templates": ["base"],
+      "biography": "",
+      "attributes": {
+        "level": {
+          "value": 1
         },
-        "tool": {
-            "templates": ["base"],
-            "usedice": 0
+        "experience": {
+          "value": 0
         },
-        "weapon": {
-            "templates": ["base"],
-            "usedice": 0
+        "class": {
+          "name": ""
         },
-        "armor": {
-            "templates": ["base"],
-            "AP": 0
+        "background": {
+          "text": ""
         }
+      },
+      "abilities": {
+        "str": {
+          "value": 10
+        },
+        "dex": {
+          "value": 10
+        },
+        "con": {
+          "value": 10
+        },
+        "int": {
+          "value": 10
+        },
+        "ner": {
+          "value": 10
+        },
+        "cha": {
+          "value": 10
+        }
+      }
     }
+  },
+  "Item": {
+    "types": ["tool", "weapon", "armor"],
+    "templates": {
+      "base": {
+        "weight": "1",
+        "description": "",
+        "properties": ""
+      }
+    },
+    "tool": {
+      "templates": ["base"],
+      "usedice": 0
+    },
+    "weapon": {
+      "templates": ["base"],
+      "usedice": 0
+    },
+    "armor": {
+      "templates": ["base"],
+      "AP": 0
+    }
+  }
 }
