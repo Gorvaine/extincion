@@ -20,6 +20,7 @@
 .logo {
     display: flex;
     flex-wrap: nowrap;
+    font-style: "Aveny";
     grid-column-start: 1;
     grid-row-start: 6;
     transform: rotate(-90deg);
@@ -29,7 +30,8 @@
 }
 
 .grande {
-    background-color: $c-back;
+    background-color: $c-black;
+    font-style: "Subspace";
     color: $c-fore;
     width: 200px;
     font-size: 5.18em;
@@ -83,8 +85,9 @@ h1 {
 }
 
 h1.label {
+    font-style: "Aveny";
     display: flex;
-    font-weight: bold;
+    // font-weight: bold;
     justify-content: center;
     align-items: center;
     flex-shrink: 1;
