@@ -13,9 +13,9 @@
 .grid_pc {
   display: grid;
   grid-template-columns: [first] 44px [title] 216px-44px [main-stats] auto [endcol];
-  grid-template-rows: [first] 19px [main-stats] 142px-19px [exp-levels] 190px-142px [abilities] 282px-190px [life-adrenaline] 426px-282px [talents-head] 448px-426px [talents] 575px-448px [items-head] 596px-575px [items] auto [endrow];
+  grid-template-rows: [first] 19px [main-stats] 142px-19px [exp-levels] 190px-142px [abilities] 282px-190px [life-adrenaline] 426px-282px [talents-head] 2em [talents] 575px-428px [items-head] 2em [items] auto [endrow];
   grid-gap: 0;
-  margin: -10px;
+  margin: -8px;
 }
 
 .logo {
@@ -42,7 +42,7 @@
   height: 1.2em;
   justify-self: right;
   padding: 3px 15px 0px 10px;
-  border: 1px solid;
+  border: 1px solid black;
 }
 
 .sheet-header {
@@ -129,36 +129,35 @@ h1.input {
   height: 110%;
 }
 
+.talents {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 6;
+  grid-row-end: 8;
+  height: 100%;
+  width: 95%;
+  justify-self: center;
+}
+
 .sheet-tabs {
   display: flex;
   justify-content: space-around;
   grid-column-start: 1;
   grid-column-end: 4;
-  grid-row-start: 6;
-  grid-row-end: 7;
-  line-height: 24px !important;
-  height: 24px !important;
+  grid-row-start: 8;
+  grid-row-end: 9;
   flex: 0;
-  margin: 0 !important;
-  border: 0 !important;
   background-color: $c-black;
   color: $c-fore;
 }
 
 .tab-item {
-  margin: 0 !important;
-  border: 0 !important;
-  height: 24px;
   hover {
     color: rgb(255, 255, 255);
     text-shadow: 0 0 10px red;
     font-weight: bolder;
     cursor: pointer;
   }
-}
-
-.active {
-  text-decoration: underline;
 }
 
 .item {
@@ -168,8 +167,8 @@ h1.input {
 .sheet-body {
   grid-column-start: 1;
   grid-column-end: 4;
-  grid-row-start: 7;
-  grid-row-end: 8;
+  grid-row-start: 8;
+  grid-row-end: 9;
   padding: 0 1em 0 1em;
 }
 
@@ -229,7 +228,7 @@ img.profile-img {
 .sheet-body,
 .sheet-body .tab,
 .sheet-body .tab .editor {
-  height: 100%;
+  height: 95%;
 }
 
 .tox {

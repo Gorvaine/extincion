@@ -21,9 +21,41 @@
   .item {
     line-height: 40px;
     font-weight: bold;
+    font-size: 2em;
   }
   .item.active {
     text-decoration: underline;
     text-shadow: none;
   }
+}
+
+.tab-header {
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  width: 100%;
+  background-color: $c-black;
+  font-family: Aveny;
+  height: 1.75em;
+  font-size: 1.2em;
+  color: $c-white;
+}
+
+.talents .tab-header {
+  margin: 0 0 .5em;
+}
+
+.talents input[type="text"] {
+  // margin: .25em 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.tab-item {
+  justify-content: center;
+  align-items: center;
+}
+
+.tab-item.active {
+  text-decoration: underline;
+  text-shadow: none;
 }

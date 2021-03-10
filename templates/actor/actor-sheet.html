@@ -10,21 +10,21 @@
   <div class="header-fields">
     <div class=label-input-nowrap>
       <h1 class="label">{{localize "EXTINCION.Name"}}</h1>
-      <h1 class="input"><input name="name" type="text" value="{{actor.name}}" placeholder="{{localize " EXTINCION.ActorName "}}"/></h1>
+      <h1 class="input"><input name="name" type="text" value="{{actor.name}}" placeholder="{{localize " EXTINCION.ActorName "}}" /></h1>
     </div>
     <div class=label-input-nowrap>
       <h1 class="label">{{localize "EXTINCION.Class"}}</h1>
       <h1 class="input"><input name="data.class.name" type="text" value="{{data.class.name}}" /></h1>
     </div>
     <div class=label-input-nowrap>
-      <h1 class="label">{{localize "EXTINCION.Background"}}</h1>
-      <h1 class="input"><input name="data.background.text" type="text" value="{{data.background.text}}" /></h1>
-    </div>
-    <div class=label-input-nowrap>
       <h1 class="label">{{localize "EXTINCION.Level"}}</h1>
       <h1 class="input"><input name="data.level.value" type="text" value="{{data.level.value}}" /></h1>
       <h1 class="label">{{localize "EXTINCION.Experience"}}</h1>
       <h1 class="input"><input name="data.experience.value" type="text" value="{{data.experience.value}}" /></h1>
+    </div>
+    <div class=label-input-nowrap>
+      <h1 class="label">{{localize "EXTINCION.Background"}}</h1>
+      <h1 class="input background"><textarea name="data.background.text" rows="4" type="text" value="{{data.background.text}}">{{data.background.text}}</textarea></h1>
     </div>
 
   </div>
@@ -45,17 +45,16 @@
         </nobr>
 
         <select name="data.damage.min" id="damageminvalue" data-dtype="Number">
-                {{#select data.damage.min}}
-                  <option value="1">1</option>
-                  <option value="4">D4</option>
-                  <option value="6">D6</option>
-                  <option value="8">D8</option>
-                  <option value="10">D10</option>
-                  <option value="12">D12</option>
-                  <option value="20">D20</option>
-                {{/select}}
-              </select>
-
+          {{#select data.damage.min}}
+          <option value="1">1</option>
+          <option value="4">D4</option>
+          <option value="6">D6</option>
+          <option value="8">D8</option>
+          <option value="10">D10</option>
+          <option value="12">D12</option>
+          <option value="20">D20</option>
+          {{/select}}
+        </select>
       </div>
     </div>
     <div class="resource flex-group-center">
@@ -66,29 +65,29 @@
       <div class="resource-content flexrow flex-center flex-between">
         <!-- <input type="text" name="data.adrenaline.value" value="{{data.adrenaline.value}}" data-dtype="Number"/> -->
         <select name="data.adrenaline.value" id="adrenalinevalue" data-dtype="Number">
-                                  {{#select data.adrenaline.value}}
-                                    <option value="0">—</option>
-                                    <option value="4">D4</option>
-                                    <option value="6">D6</option>
-                                    <option value="8">D8</option>
-                                    <option value="10">D10</option>
-                                    <option value="12">D12</option>
-                                    <option value="20">D20</option>
-                                  {{/select}}
-                                </select>
+          {{#select data.adrenaline.value}}
+          <option value="0">—</option>
+          <option value="4">D4</option>
+          <option value="6">D6</option>
+          <option value="8">D8</option>
+          <option value="10">D10</option>
+          <option value="12">D12</option>
+          <option value="20">D20</option>
+          {{/select}}
+        </select>
         <span> / </span>
         <!-- <input type="text" name="data.adrenaline.max" value="{{data.adrenaline.max}}" data-dtype="Number"/> -->
         <select name="data.adrenaline.max" data-dtype="Number">
-                                  {{#select data.adrenaline.max}}
-                                  <option value="0">—</option>
-                                  <option value="4">D4</option>
-                                  <option value="6">D6</option>
-                                  <option value="8">D8</option>
-                                  <option value="10">D10</option>
-                                  <option value="12">D12</option>
-                                  <option value="20">D20</option>
-                                  {{/select}}
-                                </select>
+          {{#select data.adrenaline.max}}
+          <option value="0">—</option>
+          <option value="4">D4</option>
+          <option value="6">D6</option>
+          <option value="8">D8</option>
+          <option value="10">D10</option>
+          <option value="12">D12</option>
+          <option value="20">D20</option>
+          {{/select}}
+        </select>
       </div>
     </div>
   </div>
@@ -100,10 +99,10 @@
     <div class="ab">
       <div class="ab-desc">
         <span class="ability rollable" data-roll="d20" data-label="{{ability.key}}">
-                        <nobr>
-                          <i class="fas fa-dice-d20"></i>&nbsp;{{ability.label}}
-                        </nobr>
-                      </span>
+          <nobr>
+            <i class="fas fa-dice-d20"></i>&nbsp;{{ability.label}}
+          </nobr>
+        </span>
       </div>
       <div class="ab-right">
         <input type="text" name="data.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number" />
@@ -114,26 +113,49 @@
 
 
 
-  {{!-- Sheet Tab Navigation --}}
-  <nav class="sheet-tabs tab" data-group="primary">
-    <a class="tab-item item-description" data-tab="description">Description</a>
-    <a class="tab-item item-items active" data-tab="items">Items</a>
-  </nav>
+
+  <!-- ---------------------------------------- -->
+  <!-- ------------------TALENTS--------------- -->
+  <!-- ---------------------------------------- -->
+
+  {{!-- Talents --}}
+  <div class="talents">
+    <div class="tab-header tab-item" data-group="primary" data-tab="items">
+      {{localize "EXTINCION.Talents"}}
+    </div>
+    <input type="text" name="data.talent1.text" value="{{data.talent1.text}}" data-dtype="text" />
+    <input type="text" name="data.talent2.text" value="{{data.talent2.text}}" data-dtype="text" />
+    <input type="text" name="data.talent3.text" value="{{data.talent3.text}}" data-dtype="text" />
+    <input type="text" name="data.talent4.text" value="{{data.talent4.text}}" data-dtype="text" />
+    <input type="text" name="data.talent5.text" value="{{data.talent5.text}}" data-dtype="text" />
+
+  </div>
 
   {{!-- Sheet Body --}}
   <section class="sheet-body">
 
-    {{!-- Owned Items Tab --}}
+
+
+    <!-- ---------------------------------------- -->
+    <!-- ------------------ITEMS----------------- -->
+    <!-- ---------------------------------------- -->
+
+    {{!-- Owned Items Tab --}} {{!-- Sheet Tab Navigation --}}
+    <nav class="sheet-tabs tab-header" data-group="primary">
+      <a class="tab-item item-description" data-tab="description">{{localize "EXTINCION.Description"}}</a>
+      <a class="tab-item item-items active" data-tab="items">{{localize "EXTINCION.Items"}}</a>
+    </nav>
+
     <div class="tab items" data-group="primary" data-tab="items">
       <ol class="items-list">
         <li class="item flexrow item-header">
           <div class="item-image"></div>
-          <div class="item-name">Name</div>
-          <div class="item-weight">Weight</div>
-          <div class="item-usedice">UseDice</div>
+          <div class="item-name">{{localize "EXTINCION.Name"}}</div>
+          <div class="item-weight">{{localize "EXTINCION.Weight"}}</div>
+          <div class="item-usedice">{{localize "EXTINCION.UseDiceLabel"}}</div>
           <!-- <div class="item-properties">Properties</div> -->
           <div class="item-controls">
-            <a class="item-control item-create" title="Create item" data-type="item"><i class="fas fa-plus"></i> Add item</a>
+            <a class="item-control item-create" title="Create item" data-type="item"><i class="fas fa-plus"></i> {{localize "EXTINCION.AddItem"}}</a>
           </div>
         </li>
         {{#each actor.items as |item id|}}
@@ -142,8 +164,9 @@
           <h4 class="item-name">{{item.name}}</h4>
           <h4 class="item-weight">{{item.data.weight}}</h4>
           <span style="white-space: nowrap;" class="rollable diceicon" data-label="usedice {{item._id}}" data-roll="d{{item.data.usedice}}">
-                        <i class="fas fa-dice-d20"></i> <h4 class="item-usedice"> D{{item.data.usedice}}</h4>
-                    </span>
+            <i class="fas fa-dice-d20"></i>
+            <h4 class="item-usedice"> D{{item.data.usedice}}</h4>
+          </span>
           </nobr>
           <!-- <h4 class="item-properties">{{item.data.properties}}</h4> -->
           <div class="item-controls">
