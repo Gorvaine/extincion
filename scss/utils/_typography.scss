@@ -1,7 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Martel:wght@400;800&family=Roboto:wght@300;400;500&display=swap');
+@font-face {
+  font-family: "Subspace";
+  src: url("fonts/Subspace.woff2") format("woff2");
+  src: url("fonts/Subspace.woff") format("woff");
+}
 
-@font-face {font-family: "Subspace"; src: url("//db.onlinewebfonts.com/t/a13146c175e06844feb45e0997e1b39b.eot"); src: url("//db.onlinewebfonts.com/t/a13146c175e06844feb45e0997e1b39b.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/a13146c175e06844feb45e0997e1b39b.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/a13146c175e06844feb45e0997e1b39b.woff") format("woff"), url("//db.onlinewebfonts.com/t/a13146c175e06844feb45e0997e1b39b.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/a13146c175e06844feb45e0997e1b39b.svg#Subspace") format("svg"); }
-@font-face {font-family: "Aveny"; src: url("//db.onlinewebfonts.com/t/6cdc4cc6b38c8e89e8721abe8aed4ab9.eot"); src: url("//db.onlinewebfonts.com/t/6cdc4cc6b38c8e89e8721abe8aed4ab9.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/6cdc4cc6b38c8e89e8721abe8aed4ab9.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/6cdc4cc6b38c8e89e8721abe8aed4ab9.woff") format("woff"), url("//db.onlinewebfonts.com/t/6cdc4cc6b38c8e89e8721abe8aed4ab9.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/6cdc4cc6b38c8e89e8721abe8aed4ab9.svg#Aveny T WEB") format("svg"); }
+@font-face {
+  font-family: "Aveny";
+  src: url("fonts/Aveny.woff2") format("woff2");
+  src: url("fonts/Aveny.woff") format("woff");
+}
 
-$font-primary: 'Roboto', sans-serif;
-$font-secondary: 'Roboto', sans-serif;
+$font-primary: 'Roboto',
+sans-serif;
+$font-secondary: 'Roboto',
+sans-serif;

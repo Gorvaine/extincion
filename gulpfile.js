@@ -20,6 +20,7 @@ function compileScss() {
     outputStyle: 'expanded'
   };
   return gulp.src(SYSTEM_SCSS)
+    .pipe(sourcemaps.init())
     .pipe(
       sass(options)
         .on('error', handleError)
@@ -27,6 +28,7 @@ function compileScss() {
     .pipe(prefix({
       cascade: false
     }))
+    .pipe(sourcemaps.write("."))
     .pipe(gulp.dest("./css"))
 }
 const css = gulp.series(compileScss);
