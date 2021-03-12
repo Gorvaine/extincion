@@ -39,6 +39,7 @@
   height: 1.75em;
   font-size: 1.2em;
   color: $c-white;
+  justify-content: space-around;
 }
 
 .talents .tab-header {
@@ -59,3 +60,18 @@
   text-decoration: underline;
   text-shadow: none;
 }
+
+
+// Tab de la hoja items
+.extincion .sheet-body .tab .editor {height: 13em;}
+
+.extincion .tabs .item {
+  line-height: 40px;
+  font-weight: bold;
+  font-size: 2em;
+  /* line-height: 40px; */
+  /* font-weight: bold; */
+  font-size: 1.2em;
+  font-family: 'Aveny';
+}
+
