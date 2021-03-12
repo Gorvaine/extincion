@@ -144,6 +144,7 @@
     <nav class="sheet-tabs tab-header" data-group="primary">
       <a class="tab-item item-description" data-tab="description">{{localize "EXTINCION.Description"}}</a>
       <a class="tab-item item-items active" data-tab="items">{{localize "EXTINCION.Items"}}</a>
+      <a class="tab-item item-items" data-tab="progression">{{localize "EXTINCION.Progression"}}</a>
     </nav>
 
     <div class="tab items" data-group="primary" data-tab="items">
@@ -182,6 +183,15 @@
     {{!-- Biography Tab --}}
     <div class="tab biography" data-group="primary" data-tab="description">
       {{editor content=data.biography target="data.biography" button=true owner=owner editable=editable}}
+    </div>
+
+    {{!-- Progression Tab --}}
+    <div class="tab progression" data-group="primary" data-tab="progression">
+      <input type="checkbox">{{localize "EXTINCION.Progression1"}}</input>
+      <input type="checkbox">{{localize "EXTINCION.Progression2"}}</input>
+      <input type="checkbox">{{localize "EXTINCION.Progression3"}}</input>
+      <input type="checkbox">{{localize "EXTINCION.Progression4"}}</input>
+      <input type="checkbox">{{localize "EXTINCION.Progression5"}}</input>
     </div>
 
   </section>
