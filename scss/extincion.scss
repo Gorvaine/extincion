@@ -1,16 +1,4 @@
-textarea {
-  width: 100%;
-  min-height: 50px;
-  padding: 5px;
-  background: rgba(0, 0, 0, 0.05);
-  border: none;
-  border-radius: 3px;
-  font-family: roboto;
-  -webkit-user-select: text;
-  -moz-user-select: text;
-  -ms-user-select: text;
-  user-select: text;
-}
+
 
 // Import utilities.
 @import 'utils/typography';
@@ -87,3 +75,9 @@ textarea {
 // .window-app{
 //   background: #ececec;
 // }
+
+
+textarea {
+  border: $c-border solid;
+  font-family: roboto;
+}
