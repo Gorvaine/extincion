@@ -63,7 +63,13 @@
 
 
 // Tab de la hoja items
-.sheet-body .tab .editor {height: 13em;}
+.sheet-body .tab .editor {
+  height: 13em;
+}
+
+.tab-item {
+  height: 13em;
+}
 
 .tabs .item {
   line-height: 40px;
