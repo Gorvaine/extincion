@@ -31,7 +31,16 @@
   "EXTINCION.Items": "Items",
   "EXTINCION.AddItem": "Add Item",
   "EXTINCION.Talents": "Talents",
+  "EXTINCION.DamagePoints": "Damage",
   "EXTINCION.DamageUnarmed": "Unarmed Damage",
   "EXTINCION.Progression": "Progression",
-  "EXTINCION.DamageArmed": "Damage"
+  "EXTINCION.DamageArmed": "Damage",
+  "EXTINCION.Progression1": "+1 to two characteristics (max 18).",
+  "EXTINCION.Progression2": "+2 to a characteristic.",
+  "EXTINCION.Progression3": "+3 PG.",
+  "EXTINCION.Progression4": "Raise Damage Dice 1 stop.",
+  "EXTINCION.Progression5": "Adrenaline to UD8 (minimum level 5)",
+  "EXTINCION.Progression6": "Recover CON/2 + 3 when you take a break.",
+  "EXTINCION.Progression7": "Survival's lucks.",
+  "EXTINCION.Progression8": "-2 a la puntuación de Deber (solo sintéticos)"
 }

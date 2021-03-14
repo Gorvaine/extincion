@@ -11,8 +11,7 @@
   "styles": ["css/extincion.css"],
   "scripts": [],
   "packs": [],
-  "languages": [
-    {
+  "languages": [{
       "lang": "en",
       "name": "English",
       "path": "lang/en.json"
@@ -27,8 +26,7 @@
   "gridUnits": "m",
   "primaryTokenAttribute": "health",
   "secondaryTokenAttribute": "adrenaline",
-  "url": "",
-  "manifest": "",
-  "download": "",
-  "license": "LICENSE.txt"
+  "url": "https://github.com/NeV3rKilL/extincion",
+  "manifest": "https://github.com/NeV3rKilL/extincion/raw/master/system.json",
+  "download": "https://github.com/NeV3rKilL/extincion/archive/0.3.zip",
 }
