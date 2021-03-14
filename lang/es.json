@@ -31,6 +31,16 @@
   "EXTINCION.Items": "Objetos",
   "EXTINCION.AddItem": "Objeto",
   "EXTINCION.Talents": "Talentos",
+  "EXTINCION.DamagePoints": "Daño",
   "EXTINCION.DamageUnarmed": "Daño Desarmado",
-  "EXTINCION.DamageArmed": "Daño"
+  "EXTINCION.Progression": "Progresión",
+  "EXTINCION.DamageArmed": "Daño con arma",
+  "EXTINCION.Progression1": "+1 a dos características (la puntuación máxima es 18).",
+  "EXTINCION.Progression2": "+2 a una característica.",
+  "EXTINCION.Progression3": "+3 Punto de Golpe.",
+  "EXTINCION.Progression4": "Aumentar el Dado de daño un tamaño.",
+  "EXTINCION.Progression5": "Adrenalina a Du8 (debe ser al menos de nivel 5)",
+  "EXTINCION.Progression6": "Recupera CON/2 + 3 cuando toma una Pausa para el café.",
+  "EXTINCION.Progression7": "Suerte del superviviente.",
+  "EXTINCION.Progression8": "-2 a la puntuación de Deber (solo sintéticos)"
 }

@@ -24,46 +24,34 @@
     </div>
     <div class=label-input-nowrap>
       <h1 class="label lbl-bkg">{{localize "EXTINCION.Background"}}</h1>
-      <h1 class="input background"><textarea class="textarea-bkg" name="data.background.text" rows="4" type="text" value="{{data.background.text}}">{{data.background.text}}</textarea></h1>
+      <h1 class="input background"><textarea class="textarea-bkg" name="data.background.text" rows="6" type="text" value="{{data.background.text}}">{{data.background.text}}</textarea></h1>
     </div>
-
   </div>
-  {{!-- The grid classes are defined in scss/global/_grid.scss. To use, use both the "grid" and "grid-Ncol" class where "N" can be any number from 1 to 12 and will create that number of columns. --}}
+
+
+  <!------------------------------------>
+  <!------------ HEALTH ---------------->
+  <!------------------------------------>
   <div class="header-life grid grid-2col">
-    {{!-- "flex-group-center" is also defined in the _grid.scss file and it will add a small amount of padding, a border, and will center all of its child elements content and text. --}}
-    <div class="resource flex-group-center">
+    <div class="resource noborder flex-group-center">
       <label for="data.health.value" class="resource-label">{{localize "EXTINCION.HitPoints"}}</label>
-      <div class="resource-content flexrow flex-center flex-between">
+      <div class="resource-content  flexrow flex-center flex-between">
         <input type="text" name="data.health.value" value="{{data.health.value}}" data-dtype="Number" />
         <span> / </span>
         <input type="text" name="data.health.max" value="{{data.health.max}}" data-dtype="Number" />
       </div>
-      <div class="resource ">
-        <nobr class="rollable damage-label" data-label="damagemin" data-roll="d{{data.damage.min}}">
-          <i class="fas fa-dice-d20"></i>
-          <label for="data.damage.min" class="resource-label">{{localize "EXTINCION.DamageUnarmed"}}</label>
-        </nobr>
-
-        <select name="data.damage.min" id="damageminvalue" data-dtype="Number">
-          {{#select data.damage.min}}
-          <option value="1">1</option>
-          <option value="4">D4</option>
-          <option value="6">D6</option>
-          <option value="8">D8</option>
-          <option value="10">D10</option>
-          <option value="12">D12</option>
-          <option value="20">D20</option>
-          {{/select}}
-        </select>
-      </div>
     </div>
-    <div class="resource flex-group-center">
+
+    <!------------------------------------>
+    <!------------ ADRENALINE ------------>
+    <!------------------------------------>
+
+    <div class="resource noborder flex-group-center">
       <nobr class="rollable" data-label="adrenaline" data-roll="d{{data.adrenaline.value}}">
         <i class="fas fa-dice-d20"></i>
         <label for="data.adrenaline.value" class="resource-label adrenaline-label">{{localize "EXTINCION.Adrenaline"}}</label>
       </nobr>
       <div class="resource-content flexrow flex-center flex-between">
-        <!-- <input type="text" name="data.adrenaline.value" value="{{data.adrenaline.value}}" data-dtype="Number"/> -->
         <select name="data.adrenaline.value" id="adrenalinevalue" data-dtype="Number">
           {{#select data.adrenaline.value}}
           <option value="0">—</option>
@@ -76,7 +64,6 @@
           {{/select}}
         </select>
         <span> / </span>
-        <!-- <input type="text" name="data.adrenaline.max" value="{{data.adrenaline.max}}" data-dtype="Number"/> -->
         <select name="data.adrenaline.max" data-dtype="Number">
           {{#select data.adrenaline.max}}
           <option value="0">—</option>
@@ -90,7 +77,60 @@
         </select>
       </div>
     </div>
+
+    <!------------------------------------>
+    <!------------ DAMAGE UNARMED -------->
+    <!------------------------------------>
+
+    <div class="damage-div flex-group-center">
+      <div class="rollable" data-label="damagemin" data-roll="d{{data.damage.min}}">
+        <i class="fas fa-fist-raised big-icon"></i>
+        <nobr class="damage-label">
+          <i class="fas fa-dice-d20"></i>
+          <label for="data.damage.min" class="resource-label">{{localize "EXTINCION.DamageUnarmed"}}</label>
+        </nobr>
+      </div>
+      <select name="data.damage.min" id="damageminvalue" data-dtype="Number">
+        {{#select data.damage.min}}
+        <option value="1">1</option>
+        <option value="4">D4</option>
+        <option value="6">D6</option>
+        <option value="8">D8</option>
+        <option value="10">D10</option>
+        <option value="12">D12</option>
+        <option value="20">D20</option>
+        {{/select}}
+      </select>
+    </div>
+
+    <!------------------------------------>
+    <!------------ DAMAGE ARMED ---------->
+    <!------------------------------------>
+
+
+    <div class="damage-div flex-group-center">
+      <div class="rollable" data-label="damageval" data-roll="d{{data.damage.value}}">
+        <i class="fas fa-gavel big-icon"></i>
+        <nobr class=" damage-label">
+          <i class="fas fa-dice-d20"></i>
+          <label for="data.damage.value" class="resource-label">{{localize "EXTINCION.DamageArmed"}}</label>
+        </nobr>
+      </div>
+      <select name="data.damage.value" id="damagevalue" data-dtype="Number">
+        {{#select data.damage.value}}
+        <option value="1">1</option>
+        <option value="4">D4</option>
+        <option value="6">D6</option>
+        <option value="8">D8</option>
+        <option value="10">D10</option>
+        <option value="12">D12</option>
+        <option value="20">D20</option>
+        {{/select}}
+      </select>
+    </div>
   </div>
+  </div>
+
 
   {{!-- The grid classes are defined in scss/global/_grid.scss. To use, use both the "grid" and "grid-Ncol" class where "N" can be any number from 1 to 12 and will create that number of columns. --}}
   <div class="header-abilities">
@@ -112,8 +152,6 @@
   </div>
 
 
-
-
   <!-- ---------------------------------------- -->
   <!-- ------------------TALENTS--------------- -->
   <!-- ---------------------------------------- -->
@@ -123,11 +161,12 @@
     <div class="tab-header tab-item" data-group="primary" data-tab="items">
       {{localize "EXTINCION.Talents"}}
     </div>
-    <input type="text" name="data.talent1.text" value="{{data.talent1.text}}" data-dtype="text" />
-    <input type="text" name="data.talent2.text" value="{{data.talent2.text}}" data-dtype="text" />
-    <input type="text" name="data.talent3.text" value="{{data.talent3.text}}" data-dtype="text" />
-    <input type="text" name="data.talent4.text" value="{{data.talent4.text}}" data-dtype="text" />
-    <input type="text" name="data.talent5.text" value="{{data.talent5.text}}" data-dtype="text" />
+    <input type="text" name="data.talents.talent1.text" value="{{data.talents.talent1.text}}" data-dtype="text" />
+    <input type="text" name="data.talents.talent2.text" value="{{data.talents.talent2.text}}" data-dtype="text" />
+    <input type="text" name="data.talents.talent3.text" value="{{data.talents.talent3.text}}" data-dtype="text" />
+    <input type="text" name="data.talents.talent4.text" value="{{data.talents.talent4.text}}" data-dtype="text" />
+    <input type="text" name="data.talents.talent5.text" value="{{data.talents.talent5.text}}" data-dtype="text" />
+
 
   </div>
 
@@ -186,13 +225,37 @@
     </div>
 
     {{!-- Progression Tab --}}
-    <div class="tab progression" data-group="primary" data-tab="progression">
-      <input type="checkbox">{{localize "EXTINCION.Progression1"}}</input>
-      <input type="checkbox">{{localize "EXTINCION.Progression2"}}</input>
-      <input type="checkbox">{{localize "EXTINCION.Progression3"}}</input>
-      <input type="checkbox">{{localize "EXTINCION.Progression4"}}</input>
-      <input type="checkbox">{{localize "EXTINCION.Progression5"}}</input>
-    </div>
+    <div class="tab" data-group="primary" data-tab="progression">
+      <div class="progression">
+        <div class="diceicon">
+          <input type="checkbox" name="data.progression.p1_1" {{checked data.progression.p1_1 }}></input>
+          <input type="checkbox" name="data.progression.p1_2" {{checked data.progression.p1_2 }}>{{localize "EXTINCION.Progression1"}}</input>
+        </div>
+        <div class="diceicon">
+          <input type="checkbox" name="data.progression.p2" {{checked data.progression.p2 }}>{{localize "EXTINCION.Progression2"}}</input>
+        </div>
+      </div>
+      <div class="diceicon"><input type="checkbox" name="data.progression.p3_1" {{checked data.progression.p3_1 }}></input>
+        <input type="checkbox" name="data.progression.p3_2" {{checked data.progression.p3_2 }}></input>
+        <input type="checkbox" name="data.progression.p3_3" {{checked data.progression.p3_3 }}>{{localize "EXTINCION.Progression3"}}</input>
+      </div>
+      <div class="diceicon">
+        <input type="checkbox" name="data.progression.p4" {{checked data.progression.p4 }}>{{localize "EXTINCION.Progression4"}}</input>
+      </div>
+      <div class="diceicon">
+        <input type="checkbox" name="data.progression.p5" {{checked data.progression.p5}}>{{localize "EXTINCION.Progression5"}}</input>
+      </div>
+      <div class="diceicon">
+        <input type="checkbox" name="data.progression.p6" {{checked data.progression.p6}}>{{localize "EXTINCION.Progression6"}}</input>
+      </div>
+      <input type="checkbox" name="data.progression.p7" {{checked data.progression.p7}}>{{localize "EXTINCION.Progression7"}}</input>
+      <div class="diceicon"><input type="checkbox" name="data.progression.p8_1" {{checked data.progression.p8_1}}></input>
+        <input type="checkbox" name="data.progression.p8_2" {{checked data.progression.p8_2}}></input>
+        <input type="checkbox" name="data.progression.p8_3" {{checked data.progression.p8_3}}></input>
+        <input type="checkbox" name="data.progression.p8_4" {{checked data.progression.p8_4}}>{{localize "EXTINCION.Progression8"}}
+        </input>
 
+      </div>
+    </div>
   </section>
 </form>

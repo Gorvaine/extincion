@@ -20,21 +20,6 @@
         "unarmed": {
           "value": 8,
           "min": 0
-        },
-        "talent1": {
-          "text": ""
-        },
-        "talent2": {
-          "text": ""
-        },
-        "talent3": {
-          "text": ""
-        },
-        "talent4": {
-          "text": ""
-        },
-        "talent5": {
-          "text": ""
         }
       }
     },
@@ -54,6 +39,39 @@
         "background": {
           "text": ""
         }
+      },
+      "talents": {
+        "talent1": {
+          "text": ""
+        },
+        "talent2": {
+          "text": ""
+        },
+        "talent3": {
+          "text": ""
+        },
+        "talent4": {
+          "text": ""
+        },
+        "talent5": {
+          "text": ""
+        }
+      },
+      "progression": {
+        "p1_1": false,
+        "p1_2": false,
+        "p2": false,
+        "p3_1": false,
+        "p3_2": false,
+        "p3_3": false,
+        "p4": false,
+        "p5": false,
+        "p6": false,
+        "p7": false,
+        "p8_1": false,
+        "p8_2": false,
+        "p8_3": false,
+        "p8_4": false
       },
       "abilities": {
         "str": {

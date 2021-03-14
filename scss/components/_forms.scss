@@ -13,7 +13,7 @@
 .grid_pc {
   display: grid;
   grid-template-columns: [first] 44px [title] 216px-44px [main-stats] auto [endcol];
-  grid-template-rows: [first] 19px [main-stats] 142px-19px [exp-levels] 190px-142px [abilities] 282px-190px [life-adrenaline] 426px-282px [talents-head] 2em [talents] 575px-428px [items-head] 2em [items] auto [endrow];
+  grid-template-rows: [first] 19px [main-stats] 123px [exp-levels] 48px [abilities] 35px [life-adrenaline] 201px [talents-head] 2em [talents] 147px [items-head] 2em [items] auto [endrow];
   grid-gap: 0;
   margin: -8px;
 }
@@ -92,7 +92,7 @@
   grid-row-end: 6;
   margin-right: 1.25em;
   margin-left: 0.5em;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 4em 8em;
 }
 
 .damage-label {
@@ -123,6 +123,7 @@ h1.label.lbl-bkg {
 
 .textarea-bkg {
   resize: none;
+  width: 99%;
 }
 
 .label-input-nowrap {
@@ -137,6 +138,10 @@ h1.input {
   height: 110%;
 }
 
+// .damage-div {
+//   // grid-column-end: 3;
+//   // grid-column-start: 1;
+// }
 .talents {
   grid-column-start: 1;
   grid-column-end: 4;
@@ -224,6 +229,12 @@ img.profile-img {
   align-self: center;
 }
 
+.big-icon {
+  font-size: 3em;
+  color: $c-black;
+  margin-bottom: .2em;
+}
+
 // *{
 //    background-color: #ececec;
 // }
@@ -231,12 +242,6 @@ img.profile-img {
   // width: 650px;
   width: 583px;
   height: 827px;
-}
-
-.sheet-body,
-.sheet-body .tab,
-.sheet-body .tab .editor {
-  height: 95%;
 }
 
 .tox {

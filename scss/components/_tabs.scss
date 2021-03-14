@@ -29,6 +29,10 @@
   }
 }
 
+.biography {
+  height: 15em;
+}
+
 .tab-header {
   display: flex;
   justify-self: center;
@@ -61,7 +65,6 @@
   text-shadow: none;
 }
 
-
 // Tab de la hoja items
 .sheet-body .tab .editor {
   height: 13em;
@@ -81,10 +84,9 @@
   font-family: 'Aveny';
 }
 
-
-.tab.progression{
- display:flex;
- flex-direction: column; 
- height: auto;
- width: auto;
+.progression {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: auto;
 }
