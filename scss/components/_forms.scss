@@ -255,6 +255,7 @@ img.profile-img {
 .ab-buttons {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  border: 1px gray solid;
   /* height: 1em; */
   margin: 0 0.6em 0 -.4em;
   font-size: .8em;
