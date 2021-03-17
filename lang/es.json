@@ -42,5 +42,7 @@
   "EXTINCION.Progression5": "Adrenalina a Du8 (debe ser al menos de nivel 5)",
   "EXTINCION.Progression6": "Recupera CON/2 + 3 cuando toma una Pausa para el café.",
   "EXTINCION.Progression7": "Suerte del superviviente.",
-  "EXTINCION.Progression8": "-2 a la puntuación de Deber (solo sintéticos)"
+  "EXTINCION.Progression8": "-2 a la puntuación de Deber (solo sintéticos)",
+  "EXTINCION.adv": "Ventaja",
+  "EXTINCION.dis": "Desventaja"
 }

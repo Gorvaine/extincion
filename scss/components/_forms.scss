@@ -268,3 +268,24 @@ button.active {
   border: $c-black;
   box-shadow: 0 0 8px $c-black;
 }
+
+button {
+  width: 100%;
+  color: grey;
+  margin: 0 1px;
+  background: rgba(0, 0, 0, 0);
+  border: none;
+  border-radius: 0px;
+  font-size: 13px;
+  line-height: 28px;
+  font-family: "robotto", sans-serif;
+}
+
+button:hover {
+  box-shadow: 0 0 10px BLACK;
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 5px BLACK;
+}

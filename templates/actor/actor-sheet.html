@@ -132,6 +132,10 @@
   </div>
 
 
+  <!------------------------------------>
+  <!------------ ABILITIES ---------->
+  <!------------------------------------>
+
   {{!-- The grid classes are defined in scss/global/_grid.scss. To use, use both the "grid" and "grid-Ncol" class where "N" can be any number from 1 to 12 and will create that number of columns. --}}
   <div class="header-abilities">
     {{#each data.abilities as |ability key|}}
@@ -150,8 +154,8 @@
     </div>
     {{/each}}
     <div class="ab-buttons">
-      <button type="button" class="active">Ventaja</button>
-      <button type="button">Desventaja</button>
+      <button id="adv" type="button" style="margin-left: 0px;">Ventaja</button>
+      <button id="dis" type="button">Desventaja</button>
     </div>
   </div>
 

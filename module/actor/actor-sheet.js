@@ -60,6 +60,9 @@ export class extincionActorSheet extends ActorSheet {
 
     // Rollable abilities.
     html.find('.rollable').click(this._onRoll.bind(this));
+
+    html.find('button').click(this._onButton.bind(this, html));
+
   }
 
   /* -------------------------------------------- */
@@ -69,7 +72,7 @@ export class extincionActorSheet extends ActorSheet {
    * @param {Event} event   The originating click event
    * @private
    */
-  _onItemCreate(event) {
+  _onItemCreate(event, html) {
     event.preventDefault();
     const header = event.currentTarget;
     // Get the type of item to create.
@@ -96,6 +99,30 @@ export class extincionActorSheet extends ActorSheet {
    * @param {Event} event   The originating click event
    * @private
    */
+
+
+  _onButton(_html, event) {
+
+    console.log("botón apretado!")
+
+    if (event.target.className === "") {
+      event.target.className = "active";
+      if (event.target.id == "adv") {
+        // Si el otro botón (desventaja) está apretado, lo quitamos.
+        if ($('#dis')[0].className == "active") $('#dis')[0].className = ""
+
+        $('.ability.rollable').attr("data-roll", "2d20kl");
+      } else {
+        if ($('#adv')[0].className == "active") $('#adv')[0].className = ""
+        $('.ability.rollable').attr("data-roll", "2d20kh");
+      }
+    } else {
+
+      event.target.className = "";
+      $('.ability.rollable').attr("data-roll", "d20");
+    }
+  }
+
   _onRoll(event) {
     event.preventDefault();
     const element = event.currentTarget;
@@ -127,6 +154,21 @@ export class extincionActorSheet extends ActorSheet {
         prepflavor = `${EXTINCION.abilities[dataset.label]}`;
         flavor = `${game.i18n.localize("EXTINCION.rolling")}<b>${game.i18n.localize(prepflavor)}</b>`
       }
+
+
+      // Añadimos el mensaje de tirada con ventaja!
+      if ((typeof(prepflavor) != 'undefined') && ($('#adv')[0].className == "active")) {
+        flavor = `${game.i18n.localize("EXTINCION.adv")} - ${flavor}`;
+      } else if ($('#dis')[0].className == "active") {
+        flavor = `${game.i18n.localize("EXTINCION.dis")} - ${flavor}`;
+      }
+
+      // Desmarcamos la ventaja/desventaja Esto debería ser personalizable en settup.
+      // TODO <-<-<-<-<-<< DEBERÍA SER PERSONALIZABLE EN SETUP!!!
+      $('#adv')[0].className = "";
+      $('#dis')[0].className = "";
+      $('.ability.rollable').attr("data-roll", "d20");
+
       let msg = {
         user: game.userId,
         type: CHAT_MESSAGE_TYPES.ROLL,
