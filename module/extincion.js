@@ -104,10 +104,5 @@ Hooks.on("renderChatMessage", (message, html, data) => {
   html.find(".dice-formula").text(strFormula);
   html.find(".dice-total").text(str.toString());
 
-  // Desmarcamos la ventaja/desventaja Esto debería ser personalizable en settup.
-  // TODO <-<-<-<-<-<< DEBERÍA SER PERSONALIZABLE EN SETUP!!!
-  $('#adv')[0].className = ""
-  $('#dis')[0].className = ""
-
   // html.append("<div class=\"success\">Probando tirada</div>");
 });

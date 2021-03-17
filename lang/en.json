@@ -42,5 +42,7 @@
   "EXTINCION.Progression5": "Adrenaline to UD8 (minimum level 5)",
   "EXTINCION.Progression6": "Recover CON/2 + 3 when you take a break.",
   "EXTINCION.Progression7": "Survival's lucks.",
-  "EXTINCION.Progression8": "-2 a la puntuación de Deber (solo sintéticos)"
+  "EXTINCION.Progression8": "-2 a la puntuación de Deber (solo sintéticos)",
+  "EXTINCION.adv": "Advantage",
+  "EXTINCION.dis": "Disadvantage"
 }
