@@ -19,6 +19,7 @@
   @import 'components/items';
 }
 
+@import 'components/dice';
 .sheetpc {
   @import 'sheet/pc';
 }
@@ -91,7 +92,6 @@ textarea {
 }
 
 // Cambios base de foundry de rojo a gris
-
 ::-webkit-scrollbar-thumb {
   border: 1px solid $c-grey;
 }
@@ -101,7 +101,7 @@ textarea {
   box-shadow: 0 0 10px $c-grey;
 }
 
-#sidebar-tabs > .item.active {
+#sidebar-tabs>.item.active {
   box-shadow: 0 0 6px inset $c-grey;
 }
 

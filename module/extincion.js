@@ -50,7 +50,6 @@ Hooks.once('init', async function() {
  * Highlight critical success or failure on d20 rolls
  */
 Hooks.on("renderChatMessage", (message, html, data) => {
-  console.log("Mensaje hookeado!")
   if (!message.isRoll | message.data.content == "undefined") return;
 
   // si es una tirada de daño.
@@ -102,7 +101,7 @@ Hooks.on("renderChatMessage", (message, html, data) => {
   }
   html.find(".dice-formula").addClass("dice-tooltip");
   html.find(".dice-formula").text(strFormula);
-  html.find(".dice-total").text(str.toString());
+  html.find(".dice-total").html(`<li class="extincion-rolls d20">${message.roll.total}</li> ${str.toString()}`);
 
   // html.append("<div class=\"success\">Probando tirada</div>");
 });
