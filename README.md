@@ -1,5 +1,5 @@
 # Extinción
-FoundryVTT extincion repository. This is my system adaptation for the Extinción role play game for foundryvtt. The game is licensed in Spain by The Hills Press.
+This is my system adaptation for the Extinción role play game for foundryvtt. The game is licensed in Spain by The Hills Press.
 
 https://www.verkami.com/projects/29233-extincion
 
