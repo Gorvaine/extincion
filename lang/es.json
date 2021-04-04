@@ -46,5 +46,7 @@
   "EXTINCION.Progression8": "-2 a la puntuación de Deber (solo sintéticos)",
   "EXTINCION.adv": "Ventaja",
   "EXTINCION.Android": "Androide",
-  "EXTINCION.dis": "Desventaja"
+  "EXTINCION.dis": "Desventaja",
+  "EXTINCION.type:": "Tipo:",
+  "EXTINCION.AP": "Puntos de Armadura"
 }

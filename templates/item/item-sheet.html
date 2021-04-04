@@ -1,61 +1,82 @@
 <form class="{{cssClass}}" autocomplete="off">
-    <header class="sheet-header">
-        <div class="flex-center">
-            <div class="header-fields flexrow">
-                <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
-                <div>
-                    <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name" /></h1>
-                    <div class="grid grid-2col">
-                        <div class="resource">
-                            <label class="resource-label">{{localize "EXTINCION.Weight"}}</label>
-                            <input type="text" name="data.weight" value="{{data.weight}}" data-dtype="Number" />
-                        </div>
-                        <div class="resource">
-                            <span class="rollable" data-label="usedice" data-roll="d{{data.usedice}}">
-                                <i class="fas fa-dice-d20"> </i>
-                                <label class="resource-label">{{localize "EXTINCION.UseDice"}}</label>
-                            </span>
-                            <select class="datausedice" name="data.usedice" id="datausedice" data-dtype="Number">
-                                {{#select data.usedice}}
-                                  <option value="0">—</option>
-                                  <option value="4">D4</option>
-                                  <option value="6">D6</option>
-                                  <option value="8">D8</option>
-                                  <option value="10">D10</option>
-                                  <option value="12">D12</option>
-                                  <option value="20">D20</option>
-                                {{/select}}
-                                </select>
+  <header class="sheet-header">
+    <div class="flex-center">
+      <div class="header-fields flexrow">
+        <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
+        <div>
+          <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name" /></h1>
+          <p> {{localize "EXTINCION.type:"}} {{entity.type}} </p>
+          <div class="grid grid-2col">
+            {{#if (gte data.weight 0) }}
+            <div class="resource">
 
-                        </div>
-                    </div>
-                </div>
+              <!-- Si el item tiene peso lo enseñamos -->
+
+              <label class="resource-label">{{localize "EXTINCION.Weight"}}</label>
+              <input type="text" name="data.weight" value="{{data.weight}}" data-dtype="Number" />
             </div>
-            <div class="flex-center">
-                <label class="resource-label">{{localize "EXTINCION.Properties"}}</label>
-                <textarea rows="3" name="data.properties" data-dtype="String">{{data.properties}}</textarea>
-                <!-- <input type="text" name="data.properties" value="{{data.properties}}" data-dtype="String" /> -->
-                <!-- {{editor content=data.properties target="data.properties" button=true owner=owner editable=editable}} -->
+            {{/if}}
+
+            <!-- Si tiene usedice enseñamos el campo del dado de uso. -->
+
+            {{#if (gte data.usedice 0) }}
+
+            <div class="resource">
+
+
+              <span class="rollable" data-label="usedice" data-roll="d{{data.usedice}}">
+                                    <i class="fas fa-dice-d20"> </i>
+                                    <label class="resource-label">{{localize "EXTINCION.UseDice"}}</label>
+                                </span>
+              <select class="datausedice" name="data.usedice" id="datausedice" data-dtype="Number">
+                                    {{#select data.usedice}}
+                                    <option value="0">—</option>
+                                    <option value="4">D4</option>
+                                    <option value="6">D6</option>
+                                    <option value="8">D8</option>
+                                    <option value="10">D10</option>
+                                    <option value="12">D12</option>
+                                    <option value="20">D20</option>
+                                    {{/select}}
+                                    </select>
             </div>
-    </header>
+            {{/if}} {{#if (gte data.AP 0) }}
 
-    {{!-- Sheet Tab Navigation --}}
-    <nav class="sheet-tabs tabs" data-group="primary">
-        <a class="item" data-tab="description">{{localize "EXTINCION.Description"}}</a>
-        <!-- <a class="item" data-tab="attributes">Attributes</a> -->
-    </nav>
+            <div class="resource">
+              <label class="resource-label">{{localize "EXTINCION.AP"}}</label>
+              <input type="number" name="data.AP" value="{{data.AP}}" data-dtype="Number" />
+            </div>
 
-    {{!-- Sheet Body --}}
-    <section class="sheet-body itm-sht-tab">
+            {{/if}}
 
-        {{!-- Description Tab --}}
-        <div class="tab" data-group="primary" data-tab="description">
-            {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+          </div>
         </div>
-        <!-- 
+      </div>
+      <div class="flex-center">
+        <label class="resource-label">{{localize "EXTINCION.Properties"}}</label>
+        <textarea rows="3" name="data.properties" data-dtype="String">{{data.properties}}</textarea>
+        <!-- <input type="text" name="data.properties" value="{{data.properties}} " data-dtype="String" /> -->
+        <!-- {{editor content=data.properties target="data.properties" button=true owner=owner editable=editable}} -->
+      </div>
+  </header>
+
+  {{!-- Sheet Tab Navigation --}}
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="description">{{localize "EXTINCION.Description"}}</a>
+    <!-- <a class="item" data-tab="attributes">Attributes</a> -->
+  </nav>
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body itm-sht-tab">
+
+    {{!-- Description Tab --}}
+    <div class="tab" data-group="primary" data-tab="description">
+      {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+    </div>
+    <!-- 
         {{!-- Attributes Tab --}}
         <div class="tab attributes" data-group="primary" data-tab="attributes">
             {{!-- As you add new fields, add them in here! --}}
         </div> -->
-    </section>
+  </section>
 </form>

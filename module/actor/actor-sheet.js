@@ -30,7 +30,6 @@ export class extincionActorSheet extends ActorSheet {
       abil.label = game.i18n.localize(EXTINCION.abilities[key])
       abil.key = key
     }
-    console.log(data.data.abilities)
     return data;
   }
 

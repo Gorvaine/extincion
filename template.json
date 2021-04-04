@@ -111,25 +111,31 @@
     }
   },
   "Item": {
-    "types": ["tool", "weapon", "armor"],
+    "types": ["tool", "weapon", "armor", "talent"],
     "templates": {
       "base": {
-        "weight": "1",
         "description": "",
         "properties": ""
       }
     },
     "tool": {
       "templates": ["base"],
-      "usedice": 0
+      "usedice": 0,
+      "weight": 0
     },
     "weapon": {
       "templates": ["base"],
-      "usedice": 0
+      "usedice": 0,
+      "weight": 0
     },
     "armor": {
       "templates": ["base"],
-      "AP": 0
+      "AP": 0,
+      "weight": 0
+    },
+    "talent": {
+      "templates": ["base"],
+      "description": ""
     }
   }
 }
