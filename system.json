@@ -25,7 +25,7 @@
   "gridDistance": 1,
   "gridUnits": "m",
   "primaryTokenAttribute": "health",
-  "secondaryTokenAttribute": "adrenaline",
+  "secondaryTokenAttribute": "",
   "url": "https://github.com/NeV3rKilL/extincion",
   "manifest": "https://github.com/NeV3rKilL/extincion/raw/master/system.json",
   "download": "https://github.com/NeV3rKilL/extincion/archive/0.4.zip"

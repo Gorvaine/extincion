@@ -50,6 +50,11 @@ Hooks.once('init', async function() {
  * Highlight critical success or failure on d20 rolls
  */
 Hooks.on("renderChatMessage", (message, html, data) => {
+
+  let tmp = message.data.content.split(",");
+  message.data.content = tmp[0];
+  message.data.actor = game.actors.get(tmp[1]);
+
   if (!message.isRoll | message.data.content == "undefined") return;
 
   // si es una tirada de daño.
@@ -80,7 +85,7 @@ Hooks.on("renderChatMessage", (message, html, data) => {
   }
 
   // Si es una tirada de habilidades
-  var val = data.author.character.data.data.abilities[message.data.content].value;
+  var val = message.data.actor.data.data.abilities[message.data.content].value;
   var val_oper = val - message.roll.total;
   var str = `${html.find(".dice-formula").text()} - ${val}(${message.data.content})`;
   var strFormula = `${message.roll.total} | ${val}(${message.data.content})`;

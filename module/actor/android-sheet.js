@@ -4,13 +4,13 @@ import { EXTINCION } from '../config.js'
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
  */
-export class extincionActorSheet extends ActorSheet {
+export class extincionActorAndroidSheet extends extincionActorSheet {
 
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ["extincion", "sheet", "actor", "human"],
-      template: "systems/extincion/templates/actor/actor-sheet.html",
+      classes: ["extincion", "sheet", "actor", "android"],
+      template: "systems/extincion/templates/actor/actor-android-sheet.html",
       width: 600,
       height: 800,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "items" }]
