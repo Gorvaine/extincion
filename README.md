@@ -16,9 +16,11 @@ To install the system, copy and paste the URL below.
 
 Manifest URL: https://raw.githubusercontent.com/NeV3rKilL/extincion/master/system.json
 
+## Done
+- Android actor.
+
 ## Future plans
 
 - Armors as different objets
 - Talents as items.
 - Professions as items which contains talents.
-- Android actor.
