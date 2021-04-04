@@ -2,7 +2,7 @@
   "name": "extincion",
   "title": "Extinción",
   "description": "The Extinción system for FoundryVTT!",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "minimumCoreVersion": "0.7.5",
   "compatibleCoreVersion": "0.7.9",
   "templateVersion": 2,
@@ -28,5 +28,5 @@
   "secondaryTokenAttribute": "",
   "url": "https://github.com/NeV3rKilL/extincion",
   "manifest": "https://github.com/NeV3rKilL/extincion/raw/master/system.json",
-  "download": "https://github.com/NeV3rKilL/extincion/archive/0.4.zip"
+  "download": "https://github.com/NeV3rKilL/extincion/archive/0.5.zip"
 }
