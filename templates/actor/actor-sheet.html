@@ -46,6 +46,7 @@
     <!------------ ADRENALINE ------------>
     <!------------------------------------>
 
+    {{#if (eq actor.type "human")}}
     <div class="resource noborder flex-group-center">
       <nobr class="rollable" data-label="adrenaline" data-roll="d{{data.adrenaline.value}}">
         <i class="fas fa-dice-d20"></i>
@@ -77,6 +78,13 @@
         </select>
       </div>
     </div>
+    {{/if}} {{#if (eq actor.type "android")}}
+    <div class="resource noborder flex-group-center">
+      <div class="resource-content flexrow flex-center flex-between">
+        <label class="resource-label">{{localize "EXTINCION.Android"}}</label>
+      </div>
+    </div>
+    {{/if}}
 
     <!------------------------------------>
     <!------------ DAMAGE UNARMED -------->

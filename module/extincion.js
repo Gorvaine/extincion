@@ -1,7 +1,6 @@
 // Import Modules
 import { extincionActor } from "./actor/actor.js";
 import { extincionActorSheet } from "./actor/actor-sheet.js";
-import { extincionActorAndroidSheet } from "./actor/android-sheet.js";
 import { extincionItem } from "./item/item.js";
 import { extincionItemSheet } from "./item/item-sheet.js";
 
@@ -27,8 +26,7 @@ Hooks.once('init', async function() {
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("extincion", extincionActorSheet, { types: ['human'], makeDefault: true });
-  Actors.registerSheet("extincion", extincionActorAndroidSheet, { types: ['android'], makeDefault: true });
+  Actors.registerSheet("extincion", extincionActorSheet, { makeDefault: true });
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("extincion", extincionItemSheet, { makeDefault: true });
 
@@ -56,6 +54,8 @@ Hooks.on("renderChatMessage", (message, html, data) => {
   let tmp = message.data.content.split(",");
   message.data.content = tmp[0];
   message.data.actor = game.actors.get(tmp[1]);
+
+  html.find(".message-sender").text(message.data.actor.name);
 
   if (!message.isRoll | message.data.content == "undefined") return;
 
