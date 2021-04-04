@@ -77,9 +77,6 @@
           "int": {
             "value": 10
           },
-          "ner": {
-            "value": 10
-          },
           "cha": {
             "value": 10
           }
@@ -92,14 +89,24 @@
         "value": 8,
         "min": 0,
         "max": 10
+      },
+      "abilities": {
+        "ner": {
+          "value": 10
+        }
       }
     },
     "android": {
       "templates": ["base"],
       "duty": {
-        "value": 8,
+        "value": 17,
         "min": 0,
         "max": 10
+      },
+      "abilities": {
+        "dut": {
+          "value": 20
+        }
       }
     }
   },

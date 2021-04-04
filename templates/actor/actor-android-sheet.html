@@ -1,0 +1,270 @@
+<form class="{{cssClass}} grid_pc" autocomplete="off">
+  {{!-- Sheet Header --}}
+  <header class="sheet-header"> </header>
+  <div class="logo">
+    UN JUEGO DE ROL SURVIVAL DE CIENCIA FICCIÓN EN UN FUTURO OSCURO <em class=grande> EXTINCIÓN</em>
+  </div>
+  <div class="header-picture-main">
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
+  </div>
+  <div class="header-fields">
+    <div class=label-input-nowrap>
+      <h1 class="label">{{localize "EXTINCION.Name"}}</h1>
+      <h1 class="input"><input name="name" type="text" value="{{actor.name}}" placeholder="{{localize " EXTINCION.ActorName "}}" /></h1>
+    </div>
+    <div class=label-input-nowrap>
+      <h1 class="label">{{localize "EXTINCION.Class"}}</h1>
+      <h1 class="input"><input name="data.class.name" type="text" value="{{data.class.name}}" /></h1>
+    </div>
+    <div class=label-input-nowrap>
+      <h1 class="label">{{localize "EXTINCION.Level"}}</h1>
+      <h1 class="input"><input name="data.level.value" type="text" value="{{data.level.value}}" /></h1>
+      <h1 class="label">{{localize "EXTINCION.Experience"}}</h1>
+      <h1 class="input"><input name="data.experience.value" type="text" value="{{data.experience.value}}" /></h1>
+    </div>
+    <div class=label-input-nowrap>
+      <h1 class="label lbl-bkg">{{localize "EXTINCION.Background"}}</h1>
+      <h1 class="input background"><textarea class="textarea-bkg" name="data.background.text" rows="6" type="text" value="{{data.background.text}}">{{data.background.text}}</textarea></h1>
+    </div>
+  </div>
+
+
+  <!------------------------------------>
+  <!------------ HEALTH ---------------->
+  <!------------------------------------>
+  <div class="header-life grid grid-2col">
+    <div class="resource noborder flex-group-center">
+      <label for="data.health.value" class="resource-label">{{localize "EXTINCION.HitPoints"}}</label>
+      <div class="resource-content  flexrow flex-center flex-between">
+        <input type="text" name="data.health.value" value="{{data.health.value}}" data-dtype="Number" />
+        <span> / </span>
+        <input type="text" name="data.health.max" value="{{data.health.max}}" data-dtype="Number" />
+      </div>
+    </div>
+
+    <!------------------------------------>
+    <!------------ ADRENALINE ------------>
+    <!------------------------------------>
+
+    <div class="resource noborder flex-group-center">
+      <!-- <nobr class="rollable" data-label="adrenaline" data-roll="d{{data.adrenaline.value}}">
+        <i class="fas fa-dice-d20"></i>
+        <label for="data.adrenaline.value" class="resource-label adrenaline-label">{{localize "EXTINCION.Adrenaline"}}</label>
+      </nobr> -->
+      <div class="resource-content flexrow flex-center flex-between">
+        <label class="resource-label">{{localize "EXTINCION.Android"}}</label>
+        <!-- <select name="data.adrenaline.value" id="adrenalinevalue" data-dtype="Number">
+          {{#select data.adrenaline.value}}
+          <option value="0">—</option>
+          <option value="4">D4</option>
+          <option value="6">D6</option>
+          <option value="8">D8</option>
+          <option value="10">D10</option>
+          <option value="12">D12</option>
+          <option value="20">D20</option>
+          {{/select}}
+        </select>
+        <span> / </span>
+        <select name="data.adrenaline.max" data-dtype="Number">
+          {{#select data.adrenaline.max}}
+          <option value="0">—</option>
+          <option value="4">D4</option>
+          <option value="6">D6</option>
+          <option value="8">D8</option>
+          <option value="10">D10</option>
+          <option value="12">D12</option>
+          <option value="20">D20</option>
+          {{/select}}
+        </select> -->
+      </div>
+    </div>
+
+    <!------------------------------------>
+    <!------------ DAMAGE UNARMED -------->
+    <!------------------------------------>
+
+    <div class="damage-div flex-group-center">
+      <div class="rollable" data-label="damagemin" data-roll="d{{data.damage.min}}">
+        <i class="fas fa-fist-raised big-icon"></i><br>
+        <nobr class="damage-label">
+          <i class="fas fa-dice-d20"></i>
+          <label for="data.damage.min" class="resource-label">{{localize "EXTINCION.DamageUnarmed"}}</label>
+        </nobr>
+      </div>
+      <select name="data.damage.min" id="damageminvalue" data-dtype="Number">
+        {{#select data.damage.min}}
+        <option value="1">1</option>
+        <option value="4">D4</option>
+        <option value="6">D6</option>
+        <option value="8">D8</option>
+        <option value="10">D10</option>
+        <option value="12">D12</option>
+        <option value="20">D20</option>
+        {{/select}}
+      </select>
+    </div>
+
+    <!------------------------------------>
+    <!------------ DAMAGE ARMED ---------->
+    <!------------------------------------>
+
+
+    <div class="damage-div flex-group-center">
+      <div class="rollable" data-label="damageval" data-roll="d{{data.damage.value}}">
+        <i class="fas fa-gavel big-icon"></i><br>
+        <nobr class=" damage-label">
+          <i class="fas fa-dice-d20"></i>
+          <label for="data.damage.value" class="resource-label">{{localize "EXTINCION.DamageArmed"}}</label>
+        </nobr>
+      </div>
+      <select name="data.damage.value" id="damagevalue" data-dtype="Number">
+        {{#select data.damage.value}}
+        <option value="1">1</option>
+        <option value="4">D4</option>
+        <option value="6">D6</option>
+        <option value="8">D8</option>
+        <option value="10">D10</option>
+        <option value="12">D12</option>
+        <option value="20">D20</option>
+        {{/select}}
+      </select>
+    </div>
+  </div>
+  </div>
+
+
+  <!------------------------------------>
+  <!------------ ABILITIES ---------->
+  <!------------------------------------>
+
+  {{!-- The grid classes are defined in scss/global/_grid.scss. To use, use both the "grid" and "grid-Ncol" class where "N" can be any number from 1 to 12 and will create that number of columns. --}}
+  <div class="header-abilities">
+    {{#each data.abilities as |ability key|}}
+
+    <div class="ab">
+      <div class="ab-desc">
+        <span class="ability rollable" data-roll="d20" data-label="{{ability.key}}">
+          <nobr>
+            <i class="fas fa-dice-d20"></i>&nbsp;{{ability.label}}
+          </nobr>
+        </span>
+      </div>
+      <div class="ab-right">
+        <input type="text" name="data.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number" />
+      </div>
+    </div>
+    {{/each}}
+    <div class="ab-buttons">
+      <button id="adv" type="button" style="margin-left: 0px;">Ventaja</button>
+      <button id="dis" type="button">Desventaja</button>
+    </div>
+  </div>
+
+
+  <!-- ---------------------------------------- -->
+  <!-- ------------------TALENTS--------------- -->
+  <!-- ---------------------------------------- -->
+
+  {{!-- Talents --}}
+  <div class="talents">
+    <div class="tab-header tab-item" data-group="primary" data-tab="items">
+      {{localize "EXTINCION.Talents"}}
+    </div>
+    <input type="text" name="data.talents.talent1.text" value="{{data.talents.talent1.text}}" data-dtype="text" />
+    <input type="text" name="data.talents.talent2.text" value="{{data.talents.talent2.text}}" data-dtype="text" />
+    <input type="text" name="data.talents.talent3.text" value="{{data.talents.talent3.text}}" data-dtype="text" />
+    <input type="text" name="data.talents.talent4.text" value="{{data.talents.talent4.text}}" data-dtype="text" />
+    <input type="text" name="data.talents.talent5.text" value="{{data.talents.talent5.text}}" data-dtype="text" />
+
+
+  </div>
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+
+
+
+    <!-- ---------------------------------------- -->
+    <!-- ------------------ITEMS----------------- -->
+    <!-- ---------------------------------------- -->
+
+    {{!-- Owned Items Tab --}} {{!-- Sheet Tab Navigation --}}
+    <nav class="sheet-tabs tab-header" data-group="primary">
+      <a class="tab-item item-description" data-tab="description">{{localize "EXTINCION.Description"}}</a>
+      <a class="tab-item item-items active" data-tab="items">{{localize "EXTINCION.Items"}}</a>
+      <a class="tab-item item-items" data-tab="progression">{{localize "EXTINCION.Progression"}}</a>
+    </nav>
+
+    <div class="tab items" data-group="primary" data-tab="items">
+      <ol class="items-list">
+        <li class="item flexrow item-header">
+          <div class="item-image"></div>
+          <div class="item-name">{{localize "EXTINCION.Name"}}</div>
+          <div class="item-weight">{{localize "EXTINCION.Weight"}}</div>
+          <div class="item-usedice">{{localize "EXTINCION.UseDiceLabel"}}</div>
+          <!-- <div class="item-properties">Properties</div> -->
+          <div class="item-controls">
+            <a class="item-control item-create" title="Create item" data-type="tool"><i class="fas fa-plus"></i> {{localize "EXTINCION.AddItem"}}</a>
+          </div>
+        </li>
+        {{#each actor.items as |item id|}}
+        <li class="item flexrow" data-item-id="{{item._id}}">
+          <div class="item-image"><img src="{{item.img}}" title="{{item.name}}" width="24" height="24" /></div>
+          <h4 class="item-name">{{item.name}}</h4>
+          <h4 class="item-weight">{{item.data.weight}}</h4>
+          <span style="white-space: nowrap;" class="rollable diceicon" data-label="usedice {{item._id}}" data-roll="d{{item.data.usedice}}">
+            <i class="fas fa-dice-d20"></i>
+            <h4 class="item-usedice"> D{{item.data.usedice}}</h4>
+          </span>
+          </nobr>
+          <!-- <h4 class="item-properties">{{item.data.properties}}</h4> -->
+          <div class="item-controls">
+            <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+            <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+          </div>
+        </li>
+        {{/each}}
+      </ol>
+    </div>
+
+
+    {{!-- Biography Tab --}}
+    <div class="tab biography" data-group="primary" data-tab="description">
+      {{editor content=data.biography target="data.biography" button=true owner=owner editable=editable}}
+    </div>
+
+    {{!-- Progression Tab --}}
+    <div class="tab" data-group="primary" data-tab="progression">
+      <div class="progression">
+        <div class="diceicon">
+          <input type="checkbox" name="data.progression.p1_1" {{checked data.progression.p1_1 }}></input>
+          <input type="checkbox" name="data.progression.p1_2" {{checked data.progression.p1_2 }}>{{localize "EXTINCION.Progression1"}}</input>
+        </div>
+        <div class="diceicon">
+          <input type="checkbox" name="data.progression.p2" {{checked data.progression.p2 }}>{{localize "EXTINCION.Progression2"}}</input>
+        </div>
+      </div>
+      <div class="diceicon"><input type="checkbox" name="data.progression.p3_1" {{checked data.progression.p3_1 }}></input>
+        <input type="checkbox" name="data.progression.p3_2" {{checked data.progression.p3_2 }}></input>
+        <input type="checkbox" name="data.progression.p3_3" {{checked data.progression.p3_3 }}>{{localize "EXTINCION.Progression3"}}</input>
+      </div>
+      <div class="diceicon">
+        <input type="checkbox" name="data.progression.p4" {{checked data.progression.p4 }}>{{localize "EXTINCION.Progression4"}}</input>
+      </div>
+      <div class="diceicon">
+        <input type="checkbox" name="data.progression.p5" {{checked data.progression.p5}}>{{localize "EXTINCION.Progression5"}}</input>
+      </div>
+      <div class="diceicon">
+        <input type="checkbox" name="data.progression.p6" {{checked data.progression.p6}}>{{localize "EXTINCION.Progression6"}}</input>
+      </div>
+      <input type="checkbox" name="data.progression.p7" {{checked data.progression.p7}}>{{localize "EXTINCION.Progression7"}}</input>
+      <div class="diceicon"><input type="checkbox" name="data.progression.p8_1" {{checked data.progression.p8_1}}></input>
+        <input type="checkbox" name="data.progression.p8_2" {{checked data.progression.p8_2}}></input>
+        <input type="checkbox" name="data.progression.p8_3" {{checked data.progression.p8_3}}></input>
+        <input type="checkbox" name="data.progression.p8_4" {{checked data.progression.p8_4}}>{{localize "EXTINCION.Progression8"}}
+        </input>
+
+      </div>
+    </div>
+  </section>
+</form>

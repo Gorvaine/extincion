@@ -6,6 +6,7 @@
   "EXTINCION.AbilityInt": "Inteligencia",
   "EXTINCION.AbilityStr": "Fuerza",
   "EXTINCION.AbilityNer": "Nervio",
+  "EXTINCION.AbilityDut": "Deber",
   "EXTINCION.rolling": "Tirando dado de ",
   "EXTINCION.userolling": "Tirando dado de uso de ",
   "EXTINCION.success": "Éxito",
@@ -44,5 +45,6 @@
   "EXTINCION.Progression7": "Suerte del superviviente.",
   "EXTINCION.Progression8": "-2 a la puntuación de Deber (solo sintéticos)",
   "EXTINCION.adv": "Ventaja",
+  "EXTINCION.Android": "Androide",
   "EXTINCION.dis": "Desventaja"
 }

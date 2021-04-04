@@ -4,7 +4,7 @@ import { EXTINCION } from '../config.js'
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
  */
-export class extincionActorAndroidSheet extends extincionActorSheet {
+export class extincionActorAndroidSheet extends ActorSheet {
 
   /** @override */
   static get defaultOptions() {

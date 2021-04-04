@@ -1,6 +1,7 @@
 // Import Modules
 import { extincionActor } from "./actor/actor.js";
 import { extincionActorSheet } from "./actor/actor-sheet.js";
+import { extincionActorAndroidSheet } from "./actor/android-sheet.js";
 import { extincionItem } from "./item/item.js";
 import { extincionItemSheet } from "./item/item-sheet.js";
 
@@ -26,7 +27,8 @@ Hooks.once('init', async function() {
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("extincion", extincionActorSheet, { makeDefault: true });
+  Actors.registerSheet("extincion", extincionActorSheet, { types: ['human'], makeDefault: true });
+  Actors.registerSheet("extincion", extincionActorAndroidSheet, { types: ['android'], makeDefault: true });
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("extincion", extincionItemSheet, { makeDefault: true });
 
