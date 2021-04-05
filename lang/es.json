@@ -48,5 +48,8 @@
   "EXTINCION.Android": "Androide",
   "EXTINCION.dis": "Desventaja",
   "EXTINCION.type:": "Tipo:",
-  "EXTINCION.AP": "Puntos de Armadura"
+  "EXTINCION.AP": "Puntos de Armadura",
+  "EXTINCION.UseDiceLabelPA": "Dado de uso/PA",
+  "EXTINCION.Depleted": "Agotado",
+  "EXTINCION.AddTalent": "Talento"
 }

@@ -55,6 +55,8 @@ Hooks.on("renderChatMessage", (message, html, data) => {
   message.data.content = tmp[0];
   message.data.actor = game.actors.get(tmp[1]);
 
+  if (message.data.content == undefined) message.data.content = tmp
+
   html.find(".message-sender").text(message.data.actor.name);
 
   if (!message.isRoll | message.data.content == "undefined") return;
@@ -74,7 +76,6 @@ Hooks.on("renderChatMessage", (message, html, data) => {
       if (message.data.content.includes("adrenaline")) str = game.i18n.localize("EXTINCION.AdrenalineFailure");
       if (message.data.content.includes("usedice")) str = game.i18n.localize("EXTINCION.UseDiceFailure");
       // html.append("Pierdes Adrenalina!");
-
     } else if (message.roll.total > 2) {
       html.find(".dice-total").addClass("success");
       if (message.data.content.includes("adrenaline")) str = game.i18n.localize("EXTINCION.AdrenalineSuccess");
@@ -83,6 +84,7 @@ Hooks.on("renderChatMessage", (message, html, data) => {
     html.find(".dice-formula").addClass("dice-tooltip");
     html.find(".dice-formula").text(strFormula);
     html.find(".dice-total").text(str.toString());
+    html.find(".dice-total").html(`<li class="extincion-rolls ${message.roll._formula}">${message.roll.total}</li> ${str.toString()}`); //<--------- TODO TODO TODO 
     return
   }
 
@@ -108,7 +110,7 @@ Hooks.on("renderChatMessage", (message, html, data) => {
   }
   html.find(".dice-formula").addClass("dice-tooltip");
   html.find(".dice-formula").text(strFormula);
-  html.find(".dice-total").html(`<li class="extincion-rolls d20">${message.roll.total}</li> ${str.toString()}`);
+  html.find(".dice-total").html(`<li class="extincion-rolls ${message.roll._formula}">${message.roll.total}</li> ${str.toString()}`);
 
   // html.append("<div class=\"success\">Probando tirada</div>");
 });

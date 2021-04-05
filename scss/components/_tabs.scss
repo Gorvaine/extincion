@@ -24,8 +24,8 @@
     font-size: 2em;
   }
   .item.active {
-    text-decoration: underline;
-    text-shadow: none;
+    text-decoration: double;
+    text-shadow: 2px;
   }
 }
 
@@ -46,10 +46,13 @@
   justify-content: space-around;
 }
 
-.talents .tab-header {
-  margin: 0 0 .5em;
+ol.items-list {
+  margin: 0;
 }
 
+// .talents .tab-header {
+//   margin: 0 0 .5em;
+// }
 .talents input[type="text"] {
   // margin: .25em 0;
   font-family: "Roboto", sans-serif;

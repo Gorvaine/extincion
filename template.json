@@ -120,18 +120,18 @@
     },
     "tool": {
       "templates": ["base"],
-      "usedice": 0,
-      "weight": 0
+      "usedice": 4,
+      "weight": 1
     },
     "weapon": {
       "templates": ["base"],
-      "usedice": 0,
-      "weight": 0
+      "usedice": 4,
+      "weight": 1
     },
     "armor": {
       "templates": ["base"],
-      "AP": 0,
-      "weight": 0
+      "AP": 1,
+      "weight": 1
     },
     "talent": {
       "templates": ["base"],

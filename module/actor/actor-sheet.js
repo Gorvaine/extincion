@@ -58,6 +58,8 @@ export class extincionActorSheet extends ActorSheet {
     });
 
     // Rollable abilities.
+    html.find('.tomsg').click(this._toMsg.bind(this));
+
     html.find('.rollable').click(this._onRoll.bind(this));
 
     html.find('button').click(this._onButton.bind(this, html));
@@ -122,6 +124,10 @@ export class extincionActorSheet extends ActorSheet {
     }
   }
 
+  _toMsg(event) {
+
+  }
+
   _onRoll(event) {
     event.preventDefault();
     const element = event.currentTarget;
@@ -142,12 +148,14 @@ export class extincionActorSheet extends ActorSheet {
       let flavor
       roll = new Roll(dataset.roll, this.actor.data.data).roll();
 
-      if (cnt.includes("usedice")) {
-        let itemid = cnt.split(" ")[1];
+      // Preparamos el flavor del mensaje
+
+      if (cnt[0].includes("usedice")) {
+        let itemid = cnt[0].split(" ")[1];
         flavor = `${game.i18n.localize("EXTINCION.userolling")} <b>${this.actor.items.get(itemid).name}</b>`;
-      } else if (cnt === "damagemin") {
+      } else if (cnt[0] === "damagemin") {
         flavor = `${game.i18n.localize("EXTINCION.rolling")} <b>${game.i18n.localize("EXTINCION.DamageUnarmed")}</b>`;
-      } else if (cnt === "damageval") {
+      } else if (cnt[0] === "damageval") {
         flavor = `${game.i18n.localize("EXTINCION.rolling")} <b>${game.i18n.localize("EXTINCION.DamageArmed")}</b>`;
       } else {
         prepflavor = `${EXTINCION.abilities[dataset.label]}`;

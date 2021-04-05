@@ -485,8 +485,9 @@
 }
 
 .extincion .tabs .item.active {
-  text-decoration: underline;
-  text-shadow: none;
+  -webkit-text-decoration: double;
+  text-decoration: double;
+  text-shadow: 2px;
 }
 
 .extincion .biography {
@@ -510,8 +511,8 @@
   justify-content: space-around;
 }
 
-.extincion .talents .tab-header {
-  margin: 0 0 .5em;
+.extincion ol.items-list {
+  margin: 0;
 }
 
 .extincion .talents input[type="text"] {
@@ -602,6 +603,30 @@
   text-align: right;
 }
 
+li.extincion-rolls.d20 {
+  background-image: url(/icons/svg/d20-grey.svg);
+}
+
+li.extincion-rolls.d12 {
+  background-image: url(/icons/svg/d12-grey.svg);
+}
+
+li.extincion-rolls.d10 {
+  background-image: url(/icons/svg/d10-grey.svg);
+}
+
+li.extincion-rolls.d4 {
+  background-image: url(/icons/svg/d4-grey.svg);
+}
+
+li.extincion-rolls.d8 {
+  background-image: url(/icons/svg/d8-grey.svg);
+}
+
+li.extincion-rolls.d6 {
+  background-image: url(/icons/svg/d6-grey.svg);
+}
+
 li.extincion-rolls {
   position: relative;
   width: 24px;
@@ -615,10 +640,6 @@ li.extincion-rolls {
   color: #000;
   font-weight: bold;
   text-align: center;
-}
-
-li.extincion-rolls.d20 {
-  background-image: url(/icons/svg/d20-grey.svg);
 }
 
 .sheet .actor {
