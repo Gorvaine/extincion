@@ -18,9 +18,8 @@ Manifest URL: https://raw.githubusercontent.com/NeV3rKilL/extincion/master/syste
 
 ## Done
 - Android actor.
-
-## Future plans
-
 - Armors as different objets
 - Talents as items.
+
+## Future plans
 - Professions as items which contains talents.
