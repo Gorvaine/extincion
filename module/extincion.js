@@ -57,7 +57,7 @@ Hooks.on("renderChatMessage", (message, html, data) => {
 
   if (message.data.content == undefined) message.data.content = tmp
 
-  html.find(".message-sender").text(message.data.actor.name);
+  // html.find(".message-sender").text(message.data.actor.name);
 
   if (!message.isRoll | message.data.content == "undefined") return;
 

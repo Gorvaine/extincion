@@ -189,7 +189,7 @@
       {{#each actor.items as |item id|}} {{#if (eq item.type "talent")}}
       <li class="item flexrow" data-item-id="{{item._id}}">
         <div class="item-image"><img src="{{item.img}}" title="{{item.name}}" width="24" height="24" /></div>
-        <h4 class="item-name" width="48" height="24">{{item.name}}</h4>
+        <h4 class="item-name clickable tomsg" data-item-id="{{item._id}}" width="48" height="24">{{item.name}}</h4>
         <!-- <span style="white-space: nowrap;" class="tomsg diceicon" data-label="usedice {{item._id}}" data-roll="d{{item.data.usedice}}">
         <i class="fas fa-dice-d20"></i>
         <h4 class="item-usedice"></h4>
@@ -238,7 +238,7 @@
         {{#each actor.items as |item id|}} {{#if (ne item.type "talent")}}
         <li class="item flexrow" data-item-id="{{item._id}}">
           <div class="item-image"><img src="{{item.img}}" title="{{item.name}}" width="24" height="24" /></div>
-          <h4 class="item-name">{{item.name}}</h4>
+          <h4 class="item-name clickable tomsg" data-item-id="{{item._id}}" width="48" height="24">{{item.name}}</h4>
           <h4 class="item-weight">{{item.data.weight}}</h4>
           <!-- Las armaduras actuan diferente, sin dados de uso pero con AP. -->
           {{#if (ne item.type "armor")}}

@@ -57,8 +57,11 @@ export class extincionActorSheet extends ActorSheet {
       li.slideUp(200, () => this.render(false));
     });
 
-    // Rollable abilities.
+    // Chat message?
+
     html.find('.tomsg').click(this._toMsg.bind(this));
+
+    // Rollable abilities.
 
     html.find('.rollable').click(this._onRoll.bind(this));
 
@@ -104,7 +107,7 @@ export class extincionActorSheet extends ActorSheet {
 
   _onButton(_html, event) {
 
-    console.log("botón apretado!")
+    // console.log("botón apretado!")
 
     if (event.target.className === "") {
       event.target.className = "active";
@@ -126,6 +129,26 @@ export class extincionActorSheet extends ActorSheet {
 
   _toMsg(event) {
 
+    event.preventDefault();
+    const element = event.currentTarget;
+    const dataset = element.dataset;
+
+    if (dataset.roll) return;
+
+    if (!(dataset["itemId"] === 'undefined')) {
+
+      let item = this.actor.items.get(dataset["itemId"]);
+
+      let msg = {
+        user: game.userId,
+        type: CHAT_MESSAGE_TYPES.OTHER,
+        actor: this.actor,
+        content: `${item.data.data.properties} `, // Espacio es un truco por si no tienen properties que salga igual el mensaje.
+        flavor: `<div class="align-center item-flavor"><img width=32px src=${item.img}><span class="text">${item.name}</span></div>`
+      };
+      ChatMessage.create(msg);
+
+    }
   }
 
   _onRoll(event) {

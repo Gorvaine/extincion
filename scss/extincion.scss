@@ -41,6 +41,15 @@
   background: $c-fore;
 }
 
+.item-flavor {
+  font-size: medium;
+  // font-weight: bold;
+}
+
+.item-flavor .text {
+  margin: 0 0 0 0.25em;
+}
+
 .window-content,
 .window-app {
   color: #44443a !important;

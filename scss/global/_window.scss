@@ -13,3 +13,14 @@
     cursor: pointer;
   }
 }
+
+.clickable {
+  &:hover,
+  &:focus {
+    color: #000;
+    // font-weight: bold;
+    text-shadow: 0 0 10px black;
+    // font-weight: bolder;
+    cursor: pointer;
+  }
+}
