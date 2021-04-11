@@ -131,7 +131,8 @@
     "armor": {
       "templates": ["base"],
       "AP": 1,
-      "weight": 1
+      "weight": 1,
+      "equipped": true
     },
     "talent": {
       "templates": ["base"],

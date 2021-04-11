@@ -30,6 +30,8 @@ export class extincionActorSheet extends ActorSheet {
       abil.label = game.i18n.localize(EXTINCION.abilities[key])
       abil.key = key
     }
+    data.data["totalAP"] = this._totalAP;
+    data.data["totalWeight"] = this._totalWeight;
     return data;
   }
 
@@ -210,5 +212,16 @@ export class extincionActorSheet extends ActorSheet {
       };
       ChatMessage.create(msg);
     }
+  }
+  _totalWeight() {
+    let totalWeight = 0
+    this.actor.items.filter(i => typeof i.data.weight !== "undefined").forEach(i => totalWeight += i.data.weight)
+    return totalWeight
+  }
+
+  _totalAP() {
+    let totalAP = 0
+    this.actor.items.filter(i => (typeof i.data.AP !== "undefined") && (i.data.equipped)).forEach(i => totalAP += i.data.AP)
+    return totalAP
   }
 }
