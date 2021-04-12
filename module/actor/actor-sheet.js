@@ -42,6 +42,13 @@ export class extincionActorSheet extends ActorSheet {
     // Everything below here is only needed if the sheet is editable
     if (!this.options.editable) return;
 
+    // Equip Item
+    html.find('.item-equip').click(ev => {
+      const li = ev.currentTarget.dataset["itemId"];
+      const item = this.actor.getOwnedItem(li);
+      item.update({ 'data.equipped': !item.data.data.equipped });
+    });
+
     // Add Inventory Item
     html.find('.item-create').click(this._onItemCreate.bind(this));
 
