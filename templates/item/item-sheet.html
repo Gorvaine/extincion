@@ -18,7 +18,10 @@
             {{/if}}
 
             <!-- Si tiene usedice enseñamos el campo del dado de uso. -->
-
+            {{#if (eq entity.type "armor")}}
+            {{localize "EXTINCION.equipped"}}
+            <input type="checkbox" id="data.equipped" {{checked data.equipped}}></input>
+            {{/if}}
             {{#if (gte data.usedice 0) }}
 
             <div class="resource">
