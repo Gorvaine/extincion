@@ -84,7 +84,7 @@ Hooks.on("renderChatMessage", (message, html, data) => {
     html.find(".dice-formula").addClass("dice-tooltip");
     html.find(".dice-formula").text(strFormula);
     html.find(".dice-total").text(str.toString());
-    html.find(".dice-total").html(`<li class="extincion-rolls ${message.roll._formula}">${message.roll.total}</li> ${str.toString()}`); //<--------- TODO TODO TODO 
+    html.find(".dice-total").html(`<li class="extincion-rolls ${message.roll._formula}">${message.roll.total}</li> ${str.toString()}`); //<--------- TODO?
     return
   }
 
@@ -110,7 +110,7 @@ Hooks.on("renderChatMessage", (message, html, data) => {
   }
   html.find(".dice-formula").addClass("dice-tooltip");
   html.find(".dice-formula").text(strFormula);
-  html.find(".dice-total").html(`<li class="extincion-rolls ${message.roll._formula}">${message.roll.total}</li> ${str.toString()}`);
+  html.find(".dice-total").html(`<li class="extincion-rolls d${message.roll.dice[0].faces}">${message.roll.total}</li> ${str.toString()}`);
 
   // html.append("<div class=\"success\">Probando tirada</div>");
 });
