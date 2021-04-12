@@ -8,7 +8,7 @@
           <div class="flex-group-center grid-2col">
           <p> {{localize "EXTINCION.type:"}} {{entity.type}} </p>
           <!-- Armadura equipada? -->
-          <p>{{#if (eq entity.type "armor")}}
+          {{#if (eq entity.type "armor")}}<p>
           {{localize "EXTINCION.equipped"}}
           <input type="checkbox" id="data.equipped" {{checked data.equipped}}></input></p>
           {{/if}}
