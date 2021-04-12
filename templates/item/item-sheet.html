@@ -5,12 +5,14 @@
         <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
         <div>
           <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name" /></h1>
+          <div class="flex-group-center grid-2col">
           <p> {{localize "EXTINCION.type:"}} {{entity.type}} </p>
           <!-- Armadura equipada? -->
-          {{#if (eq entity.type "armor")}}
+          <p>{{#if (eq entity.type "armor")}}
           {{localize "EXTINCION.equipped"}}
-          <input type="checkbox" id="data.equipped" {{checked data.equipped}}></input>
+          <input type="checkbox" id="data.equipped" {{checked data.equipped}}></input></p>
           {{/if}}
+        </div>
           <div class="grid grid-2col">
             {{#if (gte data.weight 0) }}
             <div class="resource">
