@@ -51,5 +51,6 @@
     "EXTINCION.UseDiceLabelPA": "Use Dice/AP",
     "EXTINCION.AP": "Armor Points",
     "EXTINCION.type:": "Type:",
-    "EXTINCION.AbilityDut": "Duty"
+    "EXTINCION.AbilityDut": "Duty",
+    "EXTINCION.equipped": "Equipped"
 }
