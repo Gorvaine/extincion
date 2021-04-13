@@ -23,3 +23,6 @@ Manifest URL: https://raw.githubusercontent.com/NeV3rKilL/extincion/master/syste
 
 ## Future plans
 - Professions as items which contains talents.
+
+## Translation
+Translation using https://weblate.org services.
