@@ -41,7 +41,7 @@ export class extincionActorSheet extends ActorSheet {
     // Equip Item
     html.find('.item-equip').click(ev => {
       const li = ev.currentTarget.dataset["itemId"];
-      const item = this.actor.getOwnedItem(li);
+      const item = this.actor.items.get(li);
       item.update({ 'data.equipped': !item.data.data.equipped });
     });
 
@@ -51,7 +51,7 @@ export class extincionActorSheet extends ActorSheet {
     // Update Inventory Item
     html.find('.item-edit').click(ev => {
       const li = $(ev.currentTarget).parents(".item");
-      const item = this.actor.getOwnedItem(li.data("itemId"));
+      const item = this.actor.items.get(li.data("itemId"));
       item.sheet.render(true);
     });
 
@@ -146,7 +146,7 @@ export class extincionActorSheet extends ActorSheet {
 
       let msg = {
         user: game.userId,
-        type: CHAT_MESSAGE_TYPES.OTHER,
+        type: CONST.CHAT_MESSAGE_TYPES.OTHER,
         actor: this.actor,
         content: `${item.data.data.properties} `, // Espacio es un truco por si no tienen properties que salga igual el mensaje.
         flavor: `<div class="align-center item-flavor"><img width=32px src=${item.img}><span class="text">${item.name}</span></div>`
@@ -174,7 +174,7 @@ export class extincionActorSheet extends ActorSheet {
       let roll
       let prepflavor
       let flavor
-      roll = new Roll(dataset.roll, this.actor.data.data).roll();
+      roll = new Roll(dataset.roll, this.actor.data.data).evaluate({ async: false });
 
       // Preparamos el flavor del mensaje
 
