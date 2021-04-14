@@ -21,11 +21,7 @@ export class extincionActorSheet extends ActorSheet {
 
   /** @override */
   getData() {
-    const data = super.getData();
-    data.dtypes = ["String", "Number", "Boolean"];
-    for (let attr of Object.values(data.data.attributes)) {
-      attr.isCheckbox = attr.dtype === "Boolean";
-    }
+    const data = super.getData().data;
     for (let [key, abil] of Object.entries(data.data.abilities)) {
       abil.label = game.i18n.localize(EXTINCION.abilities[key])
       abil.key = key
@@ -210,11 +206,11 @@ export class extincionActorSheet extends ActorSheet {
 
       let msg = {
         user: game.userId,
-        type: CHAT_MESSAGE_TYPES.ROLL,
+        type: CONST.CHAT_MESSAGE_TYPES.ROLL,
         roll: roll,
         rollMode: game.settings.get("core", "rollMode"),
         actor: this.actor,
-        content: cnt,
+        flags: cnt,
         flavor: flavor
       };
       ChatMessage.create(msg);
@@ -222,13 +218,13 @@ export class extincionActorSheet extends ActorSheet {
   }
   _totalWeight() {
     let totalWeight = 0
-    this.actor.items.filter(i => typeof i.data.weight !== "undefined").forEach(i => totalWeight += i.data.weight)
+    this.items.filter(i => typeof i.data.weight !== "undefined").forEach(i => totalWeight += i.data.weight)
     return totalWeight
   }
 
   _totalAP() {
     let totalAP = 0
-    this.actor.items.filter(i => (typeof i.data.AP !== "undefined") && (i.data.equipped)).forEach(i => totalAP += i.data.AP)
+    this.items.filter(i => (typeof i.data.AP !== "undefined") && (i.data.equipped)).forEach(i => totalAP += i.data.AP)
     return totalAP
   }
 }

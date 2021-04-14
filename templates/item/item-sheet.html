@@ -2,16 +2,16 @@
   <header class="sheet-header">
     <div class="flex-center">
       <div class="header-fields flexrow">
-        <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
+        <img class="profile-img" src="{{img}}" data-edit="img" title="{{name}}" />
         <div>
-          <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name" /></h1>
+          <h1 class="charname"><input name="name" type="text" value="{{name}}" placeholder="Name" /></h1>
           <div style="display=flex;">
-          <p> {{localize "EXTINCION.type:"}} {{entity.type}} </p>
-          <!-- Armadura equipada? -->
-          {{#if (eq entity.type "armor")}}
-          <input type="checkbox" name="data.equipped" {{checked data.equipped}}>{{localize "EXTINCION.equipped"}}</input>
-          {{/if}}
-        </div>
+            <p> {{localize "EXTINCION.type:"}} {{type}} </p>
+            <!-- Armadura equipada? -->
+            {{#if (eq type "armor")}}
+            <input type="checkbox" name="data.equipped" {{checked data.equipped}}>{{localize "EXTINCION.equipped"}}</input>
+            {{/if}}
+          </div>
           <div class="grid grid-2col">
             {{#if (gte data.weight 0) }}
             <div class="resource">
@@ -24,7 +24,7 @@
             {{/if}}
 
             <!-- Si tiene usedice enseñamos el campo del dado de uso. -->
-            
+
             {{#if (gte data.usedice 0) }}
 
             <div class="resource">

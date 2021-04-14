@@ -51,9 +51,9 @@ Hooks.once('init', async function() {
  */
 Hooks.on("renderChatMessage", (message, html, data) => {
 
-  let tmp = message.data.content.split(",");
-  message.data.content = tmp[0];
-  message.data.actor = game.actors.get(tmp[1]);
+  let tmp = message.data.flags[0];
+  message.data.content = message.data.flags[0];
+  message.data.actor = game.actors.get(message.data.flags[1]);
 
   if (message.data.content == undefined) message.data.content = tmp
 
@@ -88,6 +88,9 @@ Hooks.on("renderChatMessage", (message, html, data) => {
     return
   }
 
+  // si no tenemos actor, salimos.
+  if (message.data.actor === undefined) return;
+
   // Si es una tirada de habilidades
   var val = message.data.actor.data.data.abilities[message.data.content].value;
   var val_oper = val - message.roll.total;
@@ -108,6 +111,8 @@ Hooks.on("renderChatMessage", (message, html, data) => {
     html.find(".dice-total").addClass("failure");
     str = game.i18n.localize("EXTINCION.failure");
   }
+  delete data.message.content;
+
   html.find(".dice-formula").addClass("dice-tooltip");
   html.find(".dice-formula").text(strFormula);
   html.find(".dice-total").html(`<li class="extincion-rolls d${message.roll.dice[0].faces}">${message.roll.total}</li> ${str.toString()}`);
