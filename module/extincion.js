@@ -4,6 +4,14 @@ import { extincionActorSheet } from "./actor/actor-sheet.js";
 import { extincionItem } from "./item/item.js";
 import { extincionItemSheet } from "./item/item-sheet.js";
 
+async function preloadHandlebarsTemplates() {
+  const templatePaths = [
+    'systems/extincion/templates/actor/sub-talents.hbs',
+    'systems/extincion/templates/actor/sub-items.hbs'
+  ];
+  return loadTemplates(templatePaths);
+};
+
 Hooks.once('init', async function() {
 
   game.extincion = {
@@ -44,6 +52,8 @@ Hooks.once('init', async function() {
   Handlebars.registerHelper('toLowerCase', function(str) {
     return str.toLowerCase();
   });
+
+  preloadHandlebarsTemplates();
 });
 
 /**
