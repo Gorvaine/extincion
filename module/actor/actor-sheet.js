@@ -58,7 +58,7 @@ export class extincionActorSheet extends ActorSheet {
     // Delete Inventory Item
     html.find('.item-delete').click(ev => {
       const li = $(ev.currentTarget).parents(".item");
-      this.actor.deleteOwnedItem(li.data("itemId"));
+      this.actor.deleteEmbeddedDocuments("Item",[li.data("itemId")]);
       li.slideUp(200, () => this.render(false));
     });
 
@@ -100,7 +100,7 @@ export class extincionActorSheet extends ActorSheet {
     delete itemData.data["type"];
 
     // Finally, create the item!
-    return this.actor.createOwnedItem(itemData);
+    return this.actor.createEmbeddedDocuments("Item" ,[itemData]);
   }
 
   /**
