@@ -20,14 +20,15 @@ export class extincionActorSheet extends ActorSheet {
   /* -------------------------------------------- */
 
   /** @override */
-  getData() {
+  async getData() {
     const data = super.getData().data;
-    for (let [key, abil] of Object.entries(data.data.abilities)) {
+    for (let [key, abil] of Object.entries(data.system.abilities)) {
       abil.label = game.i18n.localize(EXTINCION.abilities[key])
       abil.key = key
     }
-    data.data["totalAP"] = this._totalAP;
-    data.data["totalWeight"] = this._totalWeight;
+    data.system["totalAP"] = this._totalAP;
+    data.system["totalWeight"] = this._totalWeight;
+    data.system["enrichedBiography"] = await TextEditor.enrichHTML(data.system.biography, {async: true});
     return data;
   }
 
@@ -42,7 +43,7 @@ export class extincionActorSheet extends ActorSheet {
     html.find('.item-equip').click(ev => {
       const li = ev.currentTarget.dataset["itemId"];
       const item = this.actor.items.get(li);
-      item.update({ 'data.equipped': !item.data.data.equipped });
+      item.update({ 'data.equipped': !item.data.system.equipped });
     });
 
     // Add Inventory Item
@@ -148,7 +149,7 @@ export class extincionActorSheet extends ActorSheet {
         user: game.userId,
         type: CONST.CHAT_MESSAGE_TYPES.OTHER,
         actor: this.actor,
-        content: `${item.data.data.properties} `, // Espacio es un truco por si no tienen properties que salga igual el mensaje.
+        content: `${item.data.system.properties} `, // Espacio es un truco por si no tienen properties que salga igual el mensaje.
         flavor: `<div class="align-center item-flavor"><img width=32px src=${item.img}><span class="text">${item.name}</span></div>`
       };
       ChatMessage.create(msg);
@@ -156,13 +157,13 @@ export class extincionActorSheet extends ActorSheet {
     }
   }
 
-  _onRoll(event) {
+  async _onRoll(event) {
     event.preventDefault();
     const element = event.currentTarget;
     const dataset = element.dataset;
 
     // if (dataset.roll) {
-    //   let roll = new Roll(dataset.roll, this.actor.data.data);
+    //   let roll = new Roll(dataset.roll, this.actor.data.system);
     //   let label = dataset.label ? `${game.i18n.localize("EXTINCION.rolling")} ${dataset.label}` : '';
     //   roll.roll().toMessage({
     //     speaker: ChatMessage.getSpeaker({ actor: this.actor }),
@@ -174,7 +175,7 @@ export class extincionActorSheet extends ActorSheet {
       let roll
       let prepflavor
       let flavor
-      roll = new Roll(dataset.roll, this.actor.data.data).evaluate({ async: false });
+      roll = await new Roll(dataset.roll, this.actor.system).evaluate({ async: true });
 
       // Preparamos el flavor del mensaje
 
@@ -209,8 +210,8 @@ export class extincionActorSheet extends ActorSheet {
         type: CONST.CHAT_MESSAGE_TYPES.ROLL,
         roll: roll,
         rollMode: game.settings.get("core", "rollMode"),
-        actor: this.actor,
-        flags: cnt,
+        speaker: {actor: this.actor},
+        flags: {rolldata: cnt[0], actor: cnt[1]},
         flavor: flavor
       };
       ChatMessage.create(msg);
@@ -218,13 +219,13 @@ export class extincionActorSheet extends ActorSheet {
   }
   _totalWeight() {
     let totalWeight = 0
-    this.items.filter(i => typeof i.data.weight !== "undefined").forEach(i => totalWeight += i.data.weight)
+    this.items.filter(i => typeof i.system.weight !== "undefined").forEach(i => totalWeight += i.system.weight)
     return totalWeight
   }
 
   _totalAP() {
     let totalAP = 0
-    this.items.filter(i => (typeof i.data.AP !== "undefined") && (i.data.equipped)).forEach(i => totalAP += i.data.AP)
+    this.items.filter(i => (typeof i.system.AP !== "undefined") && (i.system.equipped)).forEach(i => totalAP += i.system.AP)
     return totalAP
   }
 }

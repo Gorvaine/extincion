@@ -14,17 +14,17 @@
     </div>
     <div class=label-input-nowrap>
       <h1 class="label">{{localize "EXTINCION.Class"}}</h1>
-      <h1 class="input"><input name="data.class.name" type="text" value="{{data.class.name}}" /></h1>
+      <h1 class="input"><input name="system.class.name" type="text" value="{{system.class.name}}" /></h1>
     </div>
     <div class=label-input-nowrap>
       <h1 class="label">{{localize "EXTINCION.Level"}}</h1>
-      <h1 class="input"><input name="data.level.value" type="text" value="{{data.level.value}}" /></h1>
+      <h1 class="input"><input name="system.level.value" type="text" value="{{system.level.value}}" /></h1>
       <h1 class="label">{{localize "EXTINCION.Experience"}}</h1>
-      <h1 class="input"><input name="data.experience.value" type="text" value="{{data.experience.value}}" /></h1>
+      <h1 class="input"><input name="system.experience.value" type="text" value="{{system.experience.value}}" /></h1>
     </div>
     <div class=label-input-nowrap>
       <h1 class="label lbl-bkg">{{localize "EXTINCION.Background"}}</h1>
-      <h1 class="input background"><textarea class="textarea-bkg" name="data.background.text" rows="6" type="text" value="{{data.background.text}}">{{data.background.text}}</textarea></h1>
+      <h1 class="input background"><textarea class="textarea-bkg" name="system.background.text" rows="6" type="text" value="{{system.background.text}}">{{system.background.text}}</textarea></h1>
     </div>
   </div>
 
@@ -34,11 +34,11 @@
   <!------------------------------------>
   <div class="header-life grid grid-2col">
     <div class="resource noborder flex-group-center">
-      <label for="data.health.value" class="resource-label">{{localize "EXTINCION.HitPoints"}}</label>
+      <label for="system.health.value" class="resource-label">{{localize "EXTINCION.HitPoints"}}</label>
       <div class="resource-content  flexrow flex-center flex-between">
-        <input type="text" name="data.health.value" value="{{data.health.value}}" data-dtype="Number" />
+        <input type="text" name="system.health.value" value="{{system.health.value}}" data-dtype="Number" />
         <span> / </span>
-        <input type="text" name="data.health.max" value="{{data.health.max}}" data-dtype="Number" />
+        <input type="text" name="system.health.max" value="{{system.health.max}}" data-dtype="Number" />
       </div>
     </div>
 
@@ -48,13 +48,13 @@
 
     {{#if (eq type "human")}}
     <div class="resource noborder flex-group-center">
-      <nobr class="rollable" data-label="adrenaline" data-roll="d{{data.adrenaline.value}}">
+      <nobr class="rollable" data-label="adrenaline" data-roll="d{{system.adrenaline.value}}">
         <i class="fas fa-dice-d20"></i>
-        <label for="data.adrenaline.value" class="resource-label adrenaline-label">{{localize "EXTINCION.Adrenaline"}}</label>
+        <label for="system.adrenaline.value" class="resource-label adrenaline-label">{{localize "EXTINCION.Adrenaline"}}</label>
       </nobr>
       <div class="resource-content flexrow flex-center flex-between">
-        <select name="data.adrenaline.value" id="adrenalinevalue" data-dtype="Number">
-          {{#select data.adrenaline.value}}
+        <select name="system.adrenaline.value" id="adrenalinevalue" data-dtype="Number">
+          {{#select system.adrenaline.value}}
           <option value="0">—</option>
           <option value="4">D4</option>
           <option value="6">D6</option>
@@ -65,8 +65,8 @@
           {{/select}}
         </select>
         <span> / </span>
-        <select name="data.adrenaline.max" data-dtype="Number">
-          {{#select data.adrenaline.max}}
+        <select name="system.adrenaline.max" data-dtype="Number">
+          {{#select system.adrenaline.max}}
           <option value="0">—</option>
           <option value="4">D4</option>
           <option value="6">D6</option>
@@ -91,15 +91,15 @@
     <!------------------------------------>
 
     <div class="damage-div flex-group-center">
-      <div class="rollable" data-label="damagemin" data-roll="d{{data.damage.min}}">
+      <div class="rollable" data-label="damagemin" data-roll="d{{system.damage.min}}">
         <i class="fas fa-fist-raised big-icon"></i><br>
         <nobr class="damage-label">
           <i class="fas fa-dice-d20"></i>
-          <label for="data.damage.min" class="resource-label">{{localize "EXTINCION.DamageUnarmed"}}</label>
+          <label for="system.damage.min" class="resource-label">{{localize "EXTINCION.DamageUnarmed"}}</label>
         </nobr>
       </div>
-      <select name="data.damage.min" id="damageminvalue" data-dtype="Number">
-        {{#select data.damage.min}}
+      <select name="system.damage.min" id="damageminvalue" data-dtype="Number">
+        {{#select system.damage.min}}
         <option value="1">1</option>
         <option value="4">D4</option>
         <option value="6">D6</option>
@@ -117,15 +117,15 @@
 
 
     <div class="damage-div flex-group-center">
-      <div class="rollable" data-label="damageval" data-roll="d{{data.damage.value}}">
+      <div class="rollable" data-label="damageval" data-roll="d{{system.damage.value}}">
         <i class="fas fa-gavel big-icon"></i><br>
         <nobr class=" damage-label">
           <i class="fas fa-dice-d20"></i>
-          <label for="data.damage.value" class="resource-label">{{localize "EXTINCION.DamageArmed"}}</label>
+          <label for="system.damage.value" class="resource-label">{{localize "EXTINCION.DamageArmed"}}</label>
         </nobr>
       </div>
-      <select name="data.damage.value" id="damagevalue" data-dtype="Number">
-        {{#select data.damage.value}}
+      <select name="system.damage.value" id="damagevalue" data-dtype="Number">
+        {{#select system.damage.value}}
         <option value="1">1</option>
         <option value="4">D4</option>
         <option value="6">D6</option>
@@ -146,7 +146,7 @@
 
   {{!-- The grid classes are defined in scss/global/_grid.scss. To use, use both the "grid" and "grid-Ncol" class where "N" can be any number from 1 to 12 and will create that number of columns. --}}
   <div class="header-abilities">
-    {{#each data.abilities as |ability key|}}
+    {{#each system.abilities as |ability key|}}
 
     <div class="ab">
       <div class="ab-desc">
@@ -157,7 +157,7 @@
         </span>
       </div>
       <div class="ab-right">
-        <input type="text" name="data.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number" />
+        <input type="text" name="system.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number" />
       </div>
     </div>
     {{/each}}
@@ -185,38 +185,38 @@
 
     {{> 'systems/extincion/templates/actor/sub-items.hbs'}} {{!-- Biography Tab --}}
     <div class="tab biography" data-group="primary" data-tab="description">
-      {{editor content=data.biography target="data.biography" button=true owner=owner editable=editable}}
+      {{editor enrichedBiography target="system.biography" button=true owner=owner editable=editable}}
     </div>
 
     {{!-- Progression Tab --}}
     <div class="tab" data-group="primary" data-tab="progression">
       <div class="progression">
         <div class="diceicon">
-          <input type="checkbox" name="data.progression.p1_1" {{checked data.progression.p1_1 }}></input>
-          <input type="checkbox" name="data.progression.p1_2" {{checked data.progression.p1_2 }}>{{localize "EXTINCION.Progression1"}}</input>
+          <input type="checkbox" name="system.progression.p1_1" {{checked system.progression.p1_1 }}></input>
+          <input type="checkbox" name="system.progression.p1_2" {{checked system.progression.p1_2 }}>{{localize "EXTINCION.Progression1"}}</input>
         </div>
         <div class="diceicon">
-          <input type="checkbox" name="data.progression.p2" {{checked data.progression.p2 }}>{{localize "EXTINCION.Progression2"}}</input>
+          <input type="checkbox" name="system.progression.p2" {{checked system.progression.p2 }}>{{localize "EXTINCION.Progression2"}}</input>
         </div>
       </div>
-      <div class="diceicon"><input type="checkbox" name="data.progression.p3_1" {{checked data.progression.p3_1 }}></input>
-        <input type="checkbox" name="data.progression.p3_2" {{checked data.progression.p3_2 }}></input>
-        <input type="checkbox" name="data.progression.p3_3" {{checked data.progression.p3_3 }}>{{localize "EXTINCION.Progression3"}}</input>
+      <div class="diceicon"><input type="checkbox" name="system.progression.p3_1" {{checked system.progression.p3_1 }}></input>
+        <input type="checkbox" name="system.progression.p3_2" {{checked system.progression.p3_2 }}></input>
+        <input type="checkbox" name="system.progression.p3_3" {{checked system.progression.p3_3 }}>{{localize "EXTINCION.Progression3"}}</input>
       </div>
       <div class="diceicon">
-        <input type="checkbox" name="data.progression.p4" {{checked data.progression.p4 }}>{{localize "EXTINCION.Progression4"}}</input>
+        <input type="checkbox" name="system.progression.p4" {{checked system.progression.p4 }}>{{localize "EXTINCION.Progression4"}}</input>
       </div>
       <div class="diceicon">
-        <input type="checkbox" name="data.progression.p5" {{checked data.progression.p5}}>{{localize "EXTINCION.Progression5"}}</input>
+        <input type="checkbox" name="system.progression.p5" {{checked system.progression.p5}}>{{localize "EXTINCION.Progression5"}}</input>
       </div>
       <div class="diceicon">
-        <input type="checkbox" name="data.progression.p6" {{checked data.progression.p6}}>{{localize "EXTINCION.Progression6"}}</input>
+        <input type="checkbox" name="system.progression.p6" {{checked system.progression.p6}}>{{localize "EXTINCION.Progression6"}}</input>
       </div>
-      <input type="checkbox" name="data.progression.p7" {{checked data.progression.p7}}>{{localize "EXTINCION.Progression7"}}</input>
-      <div class="diceicon"><input type="checkbox" name="data.progression.p8_1" {{checked data.progression.p8_1}}></input>
-        <input type="checkbox" name="data.progression.p8_2" {{checked data.progression.p8_2}}></input>
-        <input type="checkbox" name="data.progression.p8_3" {{checked data.progression.p8_3}}></input>
-        <input type="checkbox" name="data.progression.p8_4" {{checked data.progression.p8_4}}>{{localize "EXTINCION.Progression8"}}
+      <input type="checkbox" name="system.progression.p7" {{checked system.progression.p7}}>{{localize "EXTINCION.Progression7"}}</input>
+      <div class="diceicon"><input type="checkbox" name="system.progression.p8_1" {{checked system.progression.p8_1}}></input>
+        <input type="checkbox" name="system.progression.p8_2" {{checked system.progression.p8_2}}></input>
+        <input type="checkbox" name="system.progression.p8_3" {{checked system.progression.p8_3}}></input>
+        <input type="checkbox" name="system.progression.p8_4" {{checked system.progression.p8_4}}>{{localize "EXTINCION.Progression8"}}
         </input>
 
       </div>

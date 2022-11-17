@@ -61,57 +61,57 @@ Hooks.once('init', async function() {
  */
 Hooks.on("renderChatMessage", (message, html, data) => {
 
-  let tmp = message.data.flags[0];
-  message.data.content = message.data.flags[0];
-  message.data.actor = game.actors.get(message.data.flags[1]);
+  let tmp = message.flags.rolldata;
+  message.content = message.flags.rolldata;
+  message.actor = game.actors.get(message.speaker.actor);
 
-  if (message.data.content == undefined) message.data.content = tmp
+  if (message.content == undefined) message.content = tmp
 
-  // html.find(".message-sender").text(message.data.actor.name);
+  // html.find(".message-sender").text(message.actor.name);
 
-  if (!message.isRoll | message.data.content == "undefined") return;
+  if (!message.isRoll | message.content == "undefined") return;
 
   // si es una tirada de daño.
-  if (message.data.content == "damagemin" || message.data.content == "damageval") {
+  if (message.content == "damagemin" || message.content == "damageval") {
     html.find(".dice-formula").addClass("dice-tooltip");
     html.find(".dice-formula").text(strFormula);
-    html.find(".dice-total").text(`${game.i18n.localize("EXTINCION.DamagePoints")}: ${message.roll.total}`);
+    html.find(".dice-total").text(`${game.i18n.localize("EXTINCION.DamagePoints")}: ${message.rolls[0].total}`);
     return
   }
 
   // si es una tirada de adrenalina
-  if (message.data.content == "adrenaline" || message.data.content.includes("usedice")) {
-    if (message.roll.total <= 2) {
+  if (message.content == "adrenaline" || message.content.includes("usedice")) {
+    if (message.rolls[0].total <= 2) {
       html.find(".dice-total").addClass("failure");
-      if (message.data.content.includes("adrenaline")) str = game.i18n.localize("EXTINCION.AdrenalineFailure");
-      if (message.data.content.includes("usedice")) str = game.i18n.localize("EXTINCION.UseDiceFailure");
+      if (message.content.includes("adrenaline")) str = game.i18n.localize("EXTINCION.AdrenalineFailure");
+      if (message.content.includes("usedice")) str = game.i18n.localize("EXTINCION.UseDiceFailure");
       // html.append("Pierdes Adrenalina!");
-    } else if (message.roll.total > 2) {
+    } else if (message.rolls[0].total > 2) {
       html.find(".dice-total").addClass("success");
-      if (message.data.content.includes("adrenaline")) str = game.i18n.localize("EXTINCION.AdrenalineSuccess");
-      if (message.data.content.includes("usedice")) str = game.i18n.localize("EXTINCION.UseDiceSuccess");
+      if (message.content.includes("adrenaline")) str = game.i18n.localize("EXTINCION.AdrenalineSuccess");
+      if (message.content.includes("usedice")) str = game.i18n.localize("EXTINCION.UseDiceSuccess");
     }
     html.find(".dice-formula").addClass("dice-tooltip");
     html.find(".dice-formula").text(strFormula);
     html.find(".dice-total").text(str.toString());
-    html.find(".dice-total").html(`<li class="extincion-rolls ${message.roll._formula}">${message.roll.total}</li> ${str.toString()}`); //<--------- TODO?
+    html.find(".dice-total").html(`<li class="extincion-rolls ${message.rolls[0]._formula}">${message.rolls[0].total}</li> ${str.toString()}`); //<--------- TODO?
     return
   }
 
   // si no tenemos actor, salimos.
-  if (message.data.actor === undefined) return;
+  if (message.actor === undefined) return;
 
   // Si es una tirada de habilidades
-  var val = message.data.actor.data.data.abilities[message.data.content].value;
-  var val_oper = val - message.roll.total;
-  var str = `${html.find(".dice-formula").text()} - ${val}(${message.data.content})`;
-  var strFormula = `${message.roll.total} | ${val}(${message.data.content})`;
+  var val = message.actor.system.abilities[message.content].value;
+  var val_oper = val - message.rolls[0].total;
+  var str = `${html.find(".dice-formula").text()} - ${val}(${message.content})`;
+  var strFormula = `${message.rolls[0].total} | ${val}(${message.content})`;
 
   // Si es una tirada de habilidades
-  if (message.roll.total == 1) {
+  if (message.rolls[0].total == 1) {
     html.find(".dice-total").addClass("success");
     str = game.i18n.localize("EXTINCION.crit");
-  } else if (message.roll.total == 20) {
+  } else if (message.rolls[0].total == 20) {
     html.find(".dice-total").addClass("failure");
     str = game.i18n.localize("EXTINCION.flaw");
   } else if (val_oper > 0) {
@@ -125,7 +125,7 @@ Hooks.on("renderChatMessage", (message, html, data) => {
 
   html.find(".dice-formula").addClass("dice-tooltip");
   html.find(".dice-formula").text(strFormula);
-  html.find(".dice-total").html(`<li class="extincion-rolls d${message.roll.dice[0].faces}">${message.roll.total}</li> ${str.toString()}`);
+  html.find(".dice-total").html(`<li class="extincion-rolls d${message.rolls[0].dice[0].faces}">${message.rolls[0].total}</li> ${str.toString()}`);
 
   // html.append("<div class=\"success\">Probando tirada</div>");
 });

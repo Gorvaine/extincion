@@ -10,8 +10,8 @@
         <li class="item flexrow item-header">
           <div class="item-image"></div>
           <div class="item-name">{{localize "EXTINCION.Name"}}</div>
-          <div class="item-weight">{{localize "EXTINCION.Weight"}} {{data.totalWeight}}</div>
-          <div class="item-usedice">{{localize "EXTINCION.UseDiceLabelPA"}} {{data.totalAP}}</div>
+          <div class="item-weight">{{localize "EXTINCION.Weight"}} {{system.totalWeight}}</div>
+          <div class="item-usedice">{{localize "EXTINCION.UseDiceLabelPA"}} {{system.totalAP}}</div>
           <!-- <div class="item-properties">Properties</div> -->
           <div class="item-controls">
             <a class="item-control item-create" title="Create item" data-type="tool"><i class="fas fa-plus"></i> {{localize "EXTINCION.AddItem"}}</a>
@@ -21,25 +21,25 @@
         <li class="item flexrow" data-item-id="{{item._id}}">
           <div class="item-image"><img src="{{item.img}}" title="{{item.name}}" width="24" height="24" /></div>
           <h4 class="item-name item-edit clickable" width="48" height="24">{{item.name}}</h4>
-          <h4 class="item-weight">{{item.data.weight}}</h4>
+          <h4 class="item-weight">{{item.system.weight}}</h4>
           <!-- Las armaduras actuan diferente, sin dados de uso pero con AP. -->
           {{#if (ne item.type "armor")}}
-          <span style="white-space: nowrap;" class="rollable diceicon" data-label="usedice {{item._id}}" data-roll="d{{item.data.usedice}}">
+          <span style="white-space: nowrap;" class="rollable diceicon" data-label="usedice {{item._id}}" data-roll="d{{item.system.usedice}}">
             <i class="fas fa-dice-d20"></i>
             <!-- Comprobamos si le quedan 0 usedices -->
-            {{#if (ne item.data.usedice 0)}}
-            <h4 class="item-usedice"> D{{item.data.usedice}}</h4>
+            {{#if (ne item.system.usedice 0)}}
+            <h4 class="item-usedice"> D{{item.system.usedice}}</h4>
             {{/if}}
-            {{#if (eq item.data.usedice 0)}}
+            {{#if (eq item.system.usedice 0)}}
             <h4 class="item-usedice"> {{localize "EXTINCION.Depleted"}}</h4>
             {{/if}}
           </span>{{/if}} {{#if (eq item.type "armor")}}
-          <h4 class="item-AP">{{item.data.AP}}</h4>
+          <h4 class="item-AP">{{item.system.AP}}</h4>
           {{/if}}
 
-          <!-- <h4 class="item-properties">{{item.data.properties}}</h4> -->
+          <!-- <h4 class="item-properties">{{item.system.properties}}</h4> -->
           <div class="item-controls">
-            {{#if (eq item.type "armor")}} {{#if item.data.equipped}}
+            {{#if (eq item.type "armor")}} {{#if item.system.equipped}}
             <a class="item-control item-equip" data-item-id="{{item._id}}" title="Equip Item"><i class="fas fa-tshirt"></i></a> {{else}}
             <a class="item-control item-equip" data-item-id="{{item._id}}" title="Equip Item"><i class="fas fa-tshirt" style="color: grey;"></i></a> {{/if}} {{/if}}
             <a class="item-control tomsg" data-item-id="{{item._id}}" title="Chat Item"><i class="fas fa-comment-alt"></i></a>
