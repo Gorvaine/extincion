@@ -31,7 +31,7 @@
   "gridUnits": "m",
   "primaryTokenAttribute": "health",
   "secondaryTokenAttribute": "",
-  "url": "https://github.com/NeV3rKilL/extincion",
-  "manifest": "https://github.com/NeV3rKilL/extincion/raw/master/system.json",
-  "download": "https://github.com/NeV3rKilL/extincion/archive/refs/tags/10.0.0.zip"
+  "url": "https://github.com/gorvaine/extincion",
+  "manifest": "https://github.com/gorvaine/extincion/raw/master/system.json",
+  "download": "https://github.com/gorvaine/extincion/archive/refs/tags/10.0.0.zip"
 }
